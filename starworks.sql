@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 03:33 AM
+-- Generation Time: Nov 21, 2020 at 01:06 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -151,10 +151,10 @@ INSERT INTO `hire` (`hr_id`, `en_id`, `pj_id`, `hr_price`, `hr_message`, `hr_sta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `portfolio`
+-- Table structure for table `portofolio`
 --
 
-CREATE TABLE `portfolio` (
+CREATE TABLE `portofolio` (
   `pr_id` int(11) UNSIGNED NOT NULL,
   `en_id` int(11) UNSIGNED NOT NULL,
   `pr_app` varchar(50) NOT NULL,
@@ -167,10 +167,10 @@ CREATE TABLE `portfolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `portfolio`
+-- Dumping data for table `portofolio`
 --
 
-INSERT INTO `portfolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
+INSERT INTO `portofolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
 (1, 1, 'SSS', 'Aplikasi SSS', '-', '-', 'SSS', 'aplikasi mobile', 'image-1605889270165.jpg');
 
 -- --------------------------------------------------------
@@ -256,9 +256,9 @@ ALTER TABLE `hire`
   ADD KEY `pj_id` (`pj_id`);
 
 --
--- Indexes for table `portfolio`
+-- Indexes for table `portofolio`
 --
-ALTER TABLE `portfolio`
+ALTER TABLE `portofolio`
   ADD PRIMARY KEY (`pr_id`),
   ADD KEY `en_id` (`en_id`) USING BTREE;
 
@@ -311,9 +311,9 @@ ALTER TABLE `hire`
   MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `portfolio`
+-- AUTO_INCREMENT for table `portofolio`
 --
-ALTER TABLE `portfolio`
+ALTER TABLE `portofolio`
   MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -358,9 +358,9 @@ ALTER TABLE `hire`
   ADD CONSTRAINT `hire_pj_id_fk` FOREIGN KEY (`pj_id`) REFERENCES `project` (`pj_id`);
 
 --
--- Constraints for table `portfolio`
+-- Constraints for table `portofolio`
 --
-ALTER TABLE `portfolio`
+ALTER TABLE `portofolio`
   ADD CONSTRAINT `portfolio_en_id_fk` FOREIGN KEY (`en_id`) REFERENCES `engineer` (`en_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
