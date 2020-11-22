@@ -27,7 +27,7 @@ API StarworkS ini dibuat untuk menangani backend dari request client ke server..
 4. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
 5. Create a database with the name #nama_database, and Import file sql to **phpmyadmin**
 6. Open Postman desktop application or Chrome web app extension that has installed before
-7. Choose HTTP Method and enter request url.(ex. localhost:3000/)
+7. Choose HTTP Method and enter request url.(ex. localhost:4000/)
 8. You can see all the end point [here](#end-point)
 
 ## Set up .env file
@@ -44,6 +44,8 @@ PORT=YUR_PORT
 
 JWT_KEY =YOUR_JWT_KEY
 ```
+
+*But in this program, i put the PORT in bin folder -> www file
 
 # Link Postman : 
 https://documenter.getpostman.com/view/13426001/TVetc6jx
