@@ -2,14 +2,16 @@ const express = require('express')
 const router = express.Router()
 
 const {
-  createAccount,
-  updateAccount,
-  loginAccount
-} = require('../src/controllers/AccountController')
+    createAccount,
+    updateAccount,
+    loginAccount
+} = require('../controllers/AccountController')
 
 const {
-  hashPassword
-} = require('../src/middleware/auth')
+    hashPassword
+} = require('../middleware/auth')
+
+// const uploadImage = require('../middleware/multer')
 
 router.post('/', hashPassword, createAccount)
 router.put('/:acId', hashPassword, updateAccount)

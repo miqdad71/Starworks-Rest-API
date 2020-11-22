@@ -2,15 +2,15 @@ const express = require('express')
 const router = express.Router()
 
 const {
-  createHire,
-  getAllHireByEngineer,
-  getAllHireByProject,
-  updateHireStatus
-} = require('../src/controllers/HireController')
+    createHire,
+    getAllHireByEngineer,
+    getAllHireByProject,
+    updateHireStatus
+} = require('../controllers/HireController')
 
 const {
-  authorization
-} = require('../src/middleware/auth')
+    authorization
+} = require('../middleware/auth')
 
 router.post('/', authorization, createHire)
 router.get('/engineer/:enId', authorization, getAllHireByEngineer)

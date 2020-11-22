@@ -2,16 +2,16 @@ const express = require('express')
 const router = express.Router()
 
 const {
-  createExp,
-  getAllExpById,
-  getExpById,
-  updateExp,
-  deleteExp
-} = require('../src/controllers/ExperienceController')
+    createExp,
+    getAllExpById,
+    getExpById,
+    updateExp,
+    deleteExp
+} = require('../controllers/ExperienceController')
 
 const {
-  authorization
-} = require('../src/middleware/auth')
+    authorization
+} = require('../middleware/auth')
 
 router.post('/', authorization, createExp)
 router.get('/:exId', authorization, getAllExpById)

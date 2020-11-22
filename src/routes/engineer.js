@@ -2,17 +2,17 @@ const express = require('express')
 const router = express.Router()
 
 const {
-  getAllEngineer,
-  getEngineerById,
-  getFilterEngineer,
-  updateEngineer
-} = require('../src/controllers/EngineerController')
+    getAllEngineer,
+    getEngineerById,
+    getFilterEngineer,
+    updateEngineer
+} = require('../controllers/EngineerController')
 
 const {
-  authorization
-} = require('../src/middleware/auth')
+    authorization
+} = require('../middleware/auth')
 
-const uploadImage = require('../src/middleware/multer')
+const uploadImage = require('../middleware/multer')
 
 router.get('/', authorization, getAllEngineer)
 router.get('/detail/:enId', authorization, getEngineerById)

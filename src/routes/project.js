@@ -7,13 +7,13 @@ const {
   getProjectById,
   updateProject,
   deleteProject
-} = require('../src/controllers/ProjectController')
+} = require('../controllers/ProjectController')
 
 const {
   authorization
-} = require('../src/middleware/auth')
+} = require('../middleware/auth')
 
-const uploadImage = require('../src/middleware/multer')
+const uploadImage = require('../middleware/multer')
 
 router.post('/', authorization, uploadImage, createProject)
 router.get('/:cnId', authorization, getAllProjectById)

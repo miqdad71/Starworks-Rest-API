@@ -7,11 +7,11 @@ const {
   getSkillById,
   updateSkill,
   deleteSkill
-} = require('../src/controllers/SkillController')
+} = require('../controllers/SkillController')
 
 const {
   authorization
-} = require('../src/middleware/auth')
+} = require('../middleware/auth')
 
 router.post('/', authorization, createSkill)
 router.get('/:enId', authorization, getAllSkillById)
