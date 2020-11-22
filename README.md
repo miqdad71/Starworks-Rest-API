@@ -46,4 +46,115 @@ JWT_KEY =YOUR_JWT_KEY
 ```
 
 # Link Postman : 
-https://www.getpostman.com/collections/053cd2b08159f78d42e0
+https://documenter.getpostman.com/view/13426001/TVetc6jx
+
+
+## End-Point
+
+1. Account
+    - Login Account [POST]
+      http://localhost/4000/account/login
+
+    - Registrasi Engineer / Company [POST]
+      http://localhost/4000/account
+
+    - Update Account [PUT]
+      http://localhost/4000/account
+
+2. Enginner
+    - List Engineer [GET]
+      http://localhost/4000/engineer
+
+    - Detail Engineer [GET]
+      http://localhost/4000/engineer/detail/{id}
+
+    - Update Engineer [PUT]
+      http://localhost/4000/engineer/{id}
+
+3. Company
+    - List Company [GET]
+      http://localhost/4000/company
+
+    - Detail Company [GET]
+      http://localhost/4000/company/detail/{id}
+
+    - Update Company [PUT]
+      http://localhost/4000/company/{id}
+
+4. Skill
+    - Add Skill [POST]
+      http://localhost/4000/skill
+    
+    - List Skill [GET]
+      http://localhost/4000/skill
+
+    - Detail Skill [GET]
+      http://localhost/4000/skill/detail/{id}
+
+    - Update Skill [PUT]
+      http://localhost/4000/skill/{id}
+
+    - Delete Skill [DELETE]
+      http://localhost/4000/skill/{id}
+
+5. Experience
+    - Add Experience [POST]
+      http://localhost/4000/experience
+
+    - List Experience [GET]
+      http://localhost/4000/experience
+
+    - Detail Experience [GET]
+      http://localhost/4000/experience/{id}
+
+    - Update Experience [PUT]
+      http://localhost/4000/experience/{id}
+
+    - Delete Experience [DELETE]
+      http://localhost/4000/experience/{id}
+
+6. Portfolio
+    - Add Portfolio [POST]
+      http://localhost/4000/portfolio
+
+    - List Portfolio [GET]
+      http://localhost/4000/portfolio
+    
+    - Detail Portfolio [GET]
+      http://localhost/4000/portfolio/{id}
+
+    - Update Portfolio [PUT]
+      http://localhost/4000/portfolio/{id}
+
+    - Delete Portfolio [DELETE]
+      http://localhost/4000/portfolio/{id}
+
+7. Project
+    - Add Project [POST]
+      http://localhost/4000/project
+
+    - List Project [GET]
+      http://localhost/4000/project
+
+    - Detail Project [GET]
+      http://localhost/4000/project/{id}
+
+    - Update Project [PUT]
+      http://localhost/4000/project/{id}
+
+    - Delete Project [DELETE]
+      http://localhost/4000/project/{id}
+
+8. Hire
+    - Hiring Proccess [POST]
+      http://localhost/4000/hire
+
+    - List Hire From Engineer [GET]
+      http://localhost/4000/hire/engineer/{id}
+
+    - List Hire From Project [GET]
+      http://localhost/4000/hire/project/{id}
+
+    - Update Status Hire [PUT]
+      http://localhost/4000/hire/{id}
+```
