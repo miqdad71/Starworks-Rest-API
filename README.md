@@ -46,4 +46,4 @@ JWT_KEY =YOUR_JWT_KEY
 ```
 
 # Link Postman : 
-https://documenter.getpostman.com/view/13426001/TVetc6jx
+https://www.getpostman.com/collections/053cd2b08159f78d42e0
