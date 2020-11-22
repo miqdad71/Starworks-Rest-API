@@ -55,9 +55,9 @@ app.use('/project', projectRouter)
 app.use('/hire', hireRouter)
 
 app.get('/', (req, res) => {
-  res.send('Welcome to GoHire')
+  res.send('Welcome to StarworkS')
 })
 
 app.listen(port, () => {
-  console.log(`Listen GoHire backend on port ${port}`)
+  console.log(`Listen StarworkS backend on port ${port}`)
 })
