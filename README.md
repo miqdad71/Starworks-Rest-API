@@ -1,12 +1,3 @@
-StarworkS App
-
-StarworkS merupakan aplikasi untuk perekrutan software engineer baik itu web developer, android developer, ataupun lainnya.
-
-API StarworkS ini dibuat untuk menangani backend dari request client ke server.
-
-https://www.getpostman.com/collections/053cd2b08159f78d42e0
-
-
 # android2-backend
 Beginner &amp; Intermediate Backend
 <h1 align="center">ExpressJS - #StarworkS</h1>
@@ -54,4 +45,5 @@ PORT=YUR_PORT
 JWT_KEY =YOUR_JWT_KEY
 ```
 
-# Link Postman : https://documenter.getpostman.com/view/13426001/TVetc6jx
+# Link Postman : 
+https://documenter.getpostman.com/view/13426001/TVetc6jx
