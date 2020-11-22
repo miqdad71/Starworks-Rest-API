@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const uploadImage = require('../src/middleware/multer')
 
 const {
   getAllCompany,
@@ -8,8 +7,14 @@ const {
   updateCompany
 } = require('../src/controllers/CompanyController')
 
-router.get('/', getAllCompany)
-router.get('/detail/:cnId', getCompanyById)
-router.put('/:cnId', uploadImage, updateCompany)
+const {
+  authorization
+} = require('../src/middleware/auth')
+
+const uploadImage = require('../src/middleware/multer')
+
+router.get('/', authorization, getAllCompany)
+router.get('/detail/:cnId', authorization, getCompanyById)
+router.put('/:cnId', authorization, uploadImage, updateCompany)
 
 module.exports = router

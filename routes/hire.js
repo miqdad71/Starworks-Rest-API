@@ -8,9 +8,13 @@ const {
   updateHireStatus
 } = require('../src/controllers/HireController')
 
-router.post('/', createHire)
-router.get('/engineer/:enId', getAllHireByEngineer)
-router.get('/project/:pjId', getAllHireByProject)
-router.put('/:hrId', updateHireStatus)
+const {
+  authorization
+} = require('../src/middleware/auth')
+
+router.post('/', authorization, createHire)
+router.get('/engineer/:enId', authorization, getAllHireByEngineer)
+router.get('/project/:pjId', authorization, getAllHireByProject)
+router.put('/:hrId', authorization, updateHireStatus)
 
 module.exports = router

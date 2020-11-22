@@ -1,10 +1,10 @@
-require('dotenv')
+require('dotenv').config()
 const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const JWT = require('jsonwebtoken')
 
 const {
-  statusTokenError,
-  statusLoginRequired
+  statusLoginRequired,
+  statusTokenError
 } = require('../helpers/status')
 
 module.exports = {
@@ -18,13 +18,14 @@ module.exports = {
       }
     })
   },
+
   authorization: (req, res, next) => {
     let token = req.headers.authorization
 
     if (token) {
       token = token.split(' ')[1]
 
-      jwt.verify(token, process.env.JWT_KEY, (err, _data) => {
+      JWT.verify(token, process.env.JWT_KEY, (err, _data) => {
         if ((err && err.name === 'JsonWebTokenError') || (err && err.name === 'TokenExpiredError')) {
           statusTokenError(res, err)
         } else {

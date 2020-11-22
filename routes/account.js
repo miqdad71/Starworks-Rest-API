@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const uploadImage = require('../src/middleware/multer')
 
 const {
   createAccount,
@@ -12,7 +11,7 @@ const {
   hashPassword
 } = require('../src/middleware/auth')
 
-router.post('/', hashPassword, uploadImage, createAccount)
+router.post('/', hashPassword, createAccount)
 router.put('/:acId', hashPassword, updateAccount)
 router.post('/login', loginAccount)
 

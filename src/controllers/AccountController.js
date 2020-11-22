@@ -1,6 +1,7 @@
-require('dotenv')
+require('dotenv').config()
 const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const JWT = require('jsonwebtoken')
+
 const {
   createAccount,
   updateAccount,
@@ -11,28 +12,32 @@ const {
 const {
   statusRegistration,
   statusRegistrationFail,
+  statusRegistrationUnique,
   statusUpdate,
   statusUpdateFail,
   statusLogin,
   statusLoginFail,
   statusNotFound,
   statusNotFoundAccount,
-  statusServerError
+  statusServerError,
+  statusTokenError
 } = require('../helpers/status')
 
 module.exports = {
   createAccount: async (req, res, _next) => {
     try {
       const findData = await getAccountByEmail(req.body.ac_email)
+
       if (!findData.length) {
         const result = await createAccount(req.body)
+
         if (result.affectedRows) {
           statusRegistration(res)
         } else {
           statusRegistrationFail(res)
         }
       } else {
-        statusRegistrationFail(res)
+        statusRegistrationUnique(res)
       }
     } catch (err) {
       statusServerError(res)
@@ -74,16 +79,17 @@ module.exports = {
             ac_name: findData[0].ac_name,
             ac_email: findData[0].ac_email
           }
-          jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' }, (error, token) => {
+
+          JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '1h' }, (err, token) => {
             if (token) {
               const result = {
                 ...payload,
                 token: token
               }
+
               statusLogin(res, result)
             } else {
-              statusLoginFail(res)
-              console.log(error)
+              statusTokenError(res, err)
             }
           })
         } else {

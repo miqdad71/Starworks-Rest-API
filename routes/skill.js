@@ -9,10 +9,14 @@ const {
   deleteSkill
 } = require('../src/controllers/SkillController')
 
-router.post('/', createSkill)
-router.get('/:enId', getAllSkillById)
-router.get('/detail/:skId', getSkillById)
-router.put('/:skId', updateSkill)
-router.delete('/:skId', deleteSkill)
+const {
+  authorization
+} = require('../src/middleware/auth')
+
+router.post('/', authorization, createSkill)
+router.get('/:enId', authorization, getAllSkillById)
+router.get('/detail/:skId', authorization, getSkillById)
+router.put('/:skId', authorization, updateSkill)
+router.delete('/:skId', authorization, deleteSkill)
 
 module.exports = router

@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const uploadImage = require('../src/middleware/multer')
 
 const {
   createPortfolio,
@@ -10,10 +9,16 @@ const {
   deletePortfolio
 } = require('../src/controllers/PortfolioController')
 
-router.post('/', createPortfolio)
-router.get('/:enId', getAllPortfolioById)
-router.get('/detail/:prId', getPortfolioById)
-router.put('/:prId', uploadImage, updatePortfolio)
-router.delete('/:prId', deletePortfolio)
+const {
+  authorization
+} = require('../src/middleware/auth')
+
+const uploadImage = require('../src/middleware/multer')
+
+router.post('/', authorization, uploadImage, createPortfolio)
+router.get('/:enId', authorization, getAllPortfolioById)
+router.get('/detail/:prId', authorization, getPortfolioById)
+router.put('/:prId', authorization, uploadImage, updatePortfolio)
+router.delete('/:prId', authorization, deletePortfolio)
 
 module.exports = router

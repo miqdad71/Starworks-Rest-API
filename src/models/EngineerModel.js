@@ -26,15 +26,19 @@ module.exports = {
                ac.ac_name,
                en.en_job_title,
                en.en_job_type,
-               en.en_domicile
+               en.en_domicile,
+               sk.sk_skill_name
           FROM engineer en
           JOIN account ac
-            ON (ac.ac_id = en.ac_id)
+            ON ac.ac_id = en.ac_id
+          JOIN skill sk
+            ON sk.en_id = en.en_id
+         ORDER BY ac.ac_id
          LIMIT ${paginate.limit}
         OFFSET ${paginate.offset}
       `
 
-      dbConnect.query(query, (error, results, _fields) => {
+      dbConnect.query(query, async (error, results, _fields) => {
         if (!error) {
           resolve(results)
         } else {
@@ -52,7 +56,8 @@ module.exports = {
                ac.ac_name,
                en.en_job_title,
                en.en_job_type,
-               en.en_domicile
+               en.en_domicile,
+               sk.sk_skill_name
           FROM engineer en
           JOIN account ac 
             ON (ac.ac_id = en.ac_id)
@@ -62,7 +67,7 @@ module.exports = {
           LIKE '%${paginate.search}%'
             OR sk.sk_skill_name
           LIKE '%${paginate.search}%'
-      GROUP BY ac.ac_id
+         ORDER BY ac.ac_id
          LIMIT ${paginate.limit} 
         OFFSET ${paginate.offset}
       `
@@ -105,101 +110,35 @@ module.exports = {
   getFilterEngineer: (paginate) => {
     return new Promise((resolve, reject) => {
       const filter = parseInt(paginate.filter)
-      let query
+      let fill
 
       if (filter === 0) {
-        query = `
-          SELECT en.en_id,
-               ac.ac_id,
-               ac.ac_name,
-               en.en_job_title,
-               en.en_job_type,
-               en.en_domicile
-            FROM engineer en
-            JOIN account ac
-              ON ac.ac_id = en.ac_id
-            JOIN skill sk
-              ON sk.en_id = en.en_id
-        GROUP BY ac.ac_id
-        ORDER BY ac.ac_name ASC
-           LIMIT ${paginate.limit} 
-          OFFSET ${paginate.offset}
-        `
+        fill = 'ac.ac_name'
       } else if (filter === 1) {
-        query = `
-          SELECT en.en_id,
-                 ac.ac_id,
-                 ac.ac_name,
-                 en.en_job_title,
-                 en.en_job_type,
-                 en.en_domicile
-            FROM engineer en
-            JOIN account ac
-              ON ac.ac_id = en.ac_id
-            JOIN skill sk
-              ON sk.en_id = en.en_id
-        GROUP BY ac.ac_id
-        ORDER BY sk.sk_skill_name ASC
-           LIMIT ${paginate.limit} 
-          OFFSET ${paginate.offset}
-        `
+        fill = 'sk.sk_skill_name'
       } else if (filter === 2) {
-        query = `
-          SELECT en.en_id,
-                ac.ac_id,
-                ac.ac_name,
-                en.en_job_title,
-                en.en_job_type,
-                en.en_domicile
-            FROM engineer en
-            JOIN account ac
-              ON ac.ac_id = en.ac_id
-            JOIN skill sk
-              ON sk.en_id = en.en_id
-        GROUP BY ac.ac_id
-        ORDER BY en.en_domicile ASC
-           LIMIT ${paginate.limit} 
-          OFFSET ${paginate.offset}
-        `
-      } else if (filter === 3) {
-        query = `
-          SELECT en.en_id,
-                 ac.ac_id,
-                 ac.ac_name,
-                 en.en_job_title,
-                 en.en_job_type,
-                 en.en_domicile
-            FROM engineer en
-            JOIN account ac
-              ON ac.ac_id = en.ac_id
-            JOIN skill sk
-              ON sk.en_id = en.en_id
-           WHERE en.en_job_type = 'freelance'
-        GROUP BY ac.ac_id
-        ORDER BY en.en_job_type ASC
-           LIMIT ${paginate.limit} 
-          OFFSET ${paginate.offset}
-        `
-      } else {
-        query = `
-          SELECT en.en_id,
-                 ac.ac_id,
-                 ac.ac_name,
-                 en.en_job_title,
-                 en.en_job_type,
-                 en.en_domicile
-            FROM engineer en
-            JOIN account ac
-              ON ac.ac_id = en.ac_id
-            JOIN skill sk
-              ON sk.en_id = en.en_id
-           WHERE en.en_job_type = 'full time'
-        GROUP BY ac.ac_id
-        ORDER BY en.en_job_type ASC
-           LIMIT ${paginate.limit} 
-          OFFSET ${paginate.offset}
-        `
+        fill = 'en.en_domicile'
+      } else if (filter === 3 || filter === 4) {
+        fill = 'en.en_job_type'
       }
+
+      const query = `
+          SELECT en.en_id,
+                 ac.ac_id,
+                 ac.ac_name,
+                 en.en_job_title,
+                 en.en_job_type,
+                 en.en_domicile,
+                 sk.sk_skill_name
+            FROM engineer en
+            JOIN account ac
+              ON ac.ac_id = en.ac_id
+            JOIN skill sk
+              ON sk.en_id = en.en_id
+        ORDER BY ${fill}
+           LIMIT ${paginate.limit} 
+          OFFSET ${paginate.offset}
+        `
 
       dbConnect.query(query, (error, results, _fields) => {
         if (!error) {

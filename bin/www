@@ -5,14 +5,14 @@
  */
 
 const app = require('../app')
-const debug = require('debug')('app-starworks:server')
+const debug = require('debug')('app-wjobsid:server')
 const http = require('http')
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '2000')
+const port = normalizePort(process.env.PORT || '3000')
 app.set('port', port)
 
 /**

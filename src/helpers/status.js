@@ -15,10 +15,25 @@ module.exports = {
     })
   },
 
+  statusLoginRequired: (res, result) => {
+    res.status(400).send({
+      success: false,
+      message: 'Please login first!',
+      data: result
+    })
+  },
+
+  statusTokenError: (res, result) => {
+    res.status(403).send({
+      success: false,
+      message: result.message
+    })
+  },
+
   statusLoginFail: (res) => {
     res.status(400).send({
       success: false,
-      message: 'Email or password is invalid!'
+      message: 'Password is invalid!'
     })
   },
 
@@ -33,6 +48,13 @@ module.exports = {
     res.status(400).send({
       success: false,
       message: 'Fail to registration!'
+    })
+  },
+
+  statusRegistrationUnique: (res) => {
+    res.status(400).send({
+      success: false,
+      message: 'Email has registered!'
     })
   },
 
@@ -99,17 +121,10 @@ module.exports = {
     })
   },
 
-  statusTokenError: (res) => {
+  statusError: (res, result) => {
     res.status(404).send({
       success: false,
-      message: 'Account registered!'
-    })
-  },
-
-  statusLoginRequired: (res) => {
-    res.status(404).send({
-      success: false,
-      message: 'Account not registered!'
+      message: result.message
     })
   }
 }

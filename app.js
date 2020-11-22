@@ -4,6 +4,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 // routes sources
 const indexRouter = require('./routes/index')
@@ -22,6 +23,14 @@ const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
+// cors
+const corsOptions = {
+  origin: '*', // Semua Domain
+  method: ['*'], // Semua Method
+  allowedHeaders: ['Content-Type', 'Accept', 'Authorization', 'X-Requested-With']
+}
+app.use(cors(corsOptions))
+
 // middleware access
 app.use(logger('dev'))
 app.use(express.json())
@@ -32,6 +41,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }))
+
+// routes images
+app.use('/images', express.static('./uploads/'))
 
 // routes access
 app.use('/', indexRouter)

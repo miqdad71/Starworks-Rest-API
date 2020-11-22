@@ -52,8 +52,17 @@ module.exports = {
   },
 
   createProject: async (req, res, _next) => {
+    req.body.image = req.file === undefined ? '' : req.file.filename
+
+    const data = {
+      ...req.body,
+      pj_image: req.body.image
+    }
+
+    delete data.image
+
     try {
-      const result = await createProject(req.body)
+      const result = await createProject(data)
 
       if (result.affectedRows) {
         statusCreate(res)
@@ -67,16 +76,18 @@ module.exports = {
 
   updateProject: async (req, res, _next) => {
     const { pjId } = req.params
-    // fungsi multer upload
     req.body.image = req.file === undefined ? '' : req.file.filename
+
     const data = {
       ...req.body,
       pj_image: req.body.image
     }
+
     delete data.image
 
     try {
       const findData = await getProjectById(pjId)
+
       if (findData.length) {
         const result = await updateProject(pjId, data)
 

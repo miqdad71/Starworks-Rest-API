@@ -9,10 +9,14 @@ const {
   deleteExp
 } = require('../src/controllers/ExperienceController')
 
-router.post('/', createExp)
-router.get('/:exId', getAllExpById)
-router.get('/detail/:exId', getExpById)
-router.put('/:exId', updateExp)
-router.delete('/:exId', deleteExp)
+const {
+  authorization
+} = require('../src/middleware/auth')
+
+router.post('/', authorization, createExp)
+router.get('/:exId', authorization, getAllExpById)
+router.get('/detail/:exId', authorization, getExpById)
+router.put('/:exId', authorization, updateExp)
+router.delete('/:exId', authorization, deleteExp)
 
 module.exports = router

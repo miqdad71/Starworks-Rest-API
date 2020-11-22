@@ -16,6 +16,10 @@ const {
   statusNotFound
 } = require('../helpers/status')
 
+const {
+  nestedEngineer
+} = require('../helpers/nestedJson')
+
 module.exports = {
   getAllEngineer: async (req, res, _next) => {
     let { search, limit, page } = req.query
@@ -48,12 +52,11 @@ module.exports = {
       }
 
       if (result.length) {
-        statusGet(res, result)
+        statusGet(res, nestedEngineer(result))
       } else {
         statusNotFound(res)
       }
     } catch (error) {
-      console.log(error)
       statusServerError(res)
     }
   },
@@ -96,30 +99,39 @@ module.exports = {
     }
 
     try {
-      const result = await getFilterEngineer(paginate)
+      let result
+
+      if (isEmpty(filter)) {
+        result = await getAllEngineer(paginate)
+      } else {
+        result = await getFilterEngineer(paginate)
+      }
 
       if (result.length) {
-        statusGet(res, result)
+        statusGet(res, nestedEngineer(result))
       } else {
         statusNotFound(res)
       }
     } catch (error) {
+      console.error(error)
       statusServerError(res)
     }
   },
 
   updateEngineer: async (req, res, _next) => {
     const { enId } = req.params
-    // fungsi multer upload
     req.body.image = req.file === undefined ? '' : req.file.filename
+
     const data = {
       ...req.body,
       en_profile: req.body.image
     }
+
     delete data.image
 
     try {
       const findData = await getEngineerById(enId)
+
       if (findData.length) {
         const result = await updateEngineer(enId, data)
 

@@ -80,6 +80,7 @@ module.exports = {
       const date = new Date()
 
       data = {
+        hr_status: data.hr_status,
         hr_date_confirm: formatDate(date)
       }
 
