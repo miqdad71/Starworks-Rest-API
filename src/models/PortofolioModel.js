@@ -1,10 +1,10 @@
 const dbConnect = require('../../config/db.config')
 
 module.exports = {
-  createPortfolio: (data) => {
+  createPortofolio: (data) => {
     return new Promise((resolve, reject) => {
       const query = `
-        INSERT INTO portfolio
+        INSERT INTO portofolio
                 SET ?
       `
 
@@ -18,11 +18,11 @@ module.exports = {
     })
   },
 
-  getAllPortfolioById: (enId) => {
+  getAllPortofolioById: (enId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT *
-          FROM portfolio
+          FROM portofolio
          WHERE ?
       `
 
@@ -36,11 +36,11 @@ module.exports = {
     })
   },
 
-  getPortfolioById: (prId) => {
+  getPortofolioById: (prId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT *
-          FROM portfolio
+          FROM portofolio
          WHERE ?
       `
 
@@ -54,10 +54,10 @@ module.exports = {
     })
   },
 
-  updatePortfolio: (prId, data) => {
+  updatePortofolio: (prId, data) => {
     return new Promise((resolve, reject) => {
       const query = `
-        UPDATE portfolio
+        UPDATE portofolio
            SET ?
          WHERE pr_id = ${prId}
       `
@@ -72,10 +72,10 @@ module.exports = {
     })
   },
 
-  deletePortfolio: (prId) => {
+  deletePortofolio: (prId) => {
     return new Promise((resolve, reject) => {
       const query = `
-        DELETE FROM portfolio
+        DELETE FROM portofolio
          WHERE ?
       `
 

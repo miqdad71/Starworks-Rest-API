@@ -1,10 +1,10 @@
 const {
-  createPortfolio,
-  getAllPortfolioById,
-  getPortfolioById,
-  updatePortfolio,
-  deletePortfolio
-} = require('../models/PortfolioModel')
+  createPortofolio,
+  getAllPortofolioById,
+  getPortofolioById,
+  updatePortofolio,
+  deletePortofolio
+} = require('../models/PortofolioModel')
 
 const {
   statusGet,
@@ -19,11 +19,11 @@ const {
 } = require('../helpers/status')
 
 module.exports = {
-  getAllPortfolioById: async (req, res, _next) => {
+  getAllPortofolioById: async (req, res, _next) => {
     const { enId } = req.params
 
     try {
-      const result = await getAllPortfolioById(enId)
+      const result = await getAllPortofolioById(enId)
 
       if (result.length) {
         statusGet(res, result)
@@ -35,11 +35,11 @@ module.exports = {
     }
   },
 
-  getPortfolioById: async (req, res, _next) => {
+  getPortofolioById: async (req, res, _next) => {
     const { prId } = req.params
 
     try {
-      const result = await getPortfolioById(prId)
+      const result = await getPortofolioById(prId)
 
       if (result.length) {
         statusGet(res, result)
@@ -51,7 +51,7 @@ module.exports = {
     }
   },
 
-  createPortfolio: async (req, res, _next) => {
+  createPortofolio: async (req, res, _next) => {
     req.body.image = req.file === undefined ? '' : req.file.filename
 
     const data = {
@@ -62,7 +62,7 @@ module.exports = {
     delete data.image
 
     try {
-      const result = await createPortfolio(data)
+      const result = await createPortofolio(data)
 
       if (result.affectedRows) {
         statusCreate(res)
@@ -74,7 +74,7 @@ module.exports = {
     }
   },
 
-  updatePortfolio: async (req, res, _next) => {
+  updatePortofolio: async (req, res, _next) => {
     const { prId } = req.params
     req.body.image = req.file === undefined ? '' : req.file.filename
 
@@ -86,10 +86,10 @@ module.exports = {
     delete data.image
 
     try {
-      const findData = await getPortfolioById(prId)
+      const findData = await getPortofolioById(prId)
 
       if (findData.length) {
-        const result = await updatePortfolio(prId, data)
+        const result = await updatePortofolio(prId, data)
 
         if (result.affectedRows) {
           statusUpdate(res)
@@ -104,13 +104,13 @@ module.exports = {
     }
   },
 
-  deletePortfolio: async (req, res, _next) => {
+  deletePortofolio: async (req, res, _next) => {
     try {
       const { prId } = req.params
-      const findData = await getPortfolioById(prId)
+      const findData = await getPortofolioById(prId)
 
       if (findData.length) {
-        const result = await deletePortfolio(prId)
+        const result = await deletePortofolio(prId)
 
         if (result.affectedRows) {
           statusDelete(res)
