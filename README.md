@@ -45,7 +45,5 @@ PORT=YUR_PORT
 JWT_KEY =YOUR_JWT_KEY
 ```
 
-*But in this program, i put the PORT in bin folder -> www file
-
 # Link Postman : 
 https://documenter.getpostman.com/view/13426001/TVetc6jx
