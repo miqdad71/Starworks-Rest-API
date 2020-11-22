@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2020 at 04:06 AM
+-- Generation Time: Nov 22, 2020 at 02:07 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -43,9 +43,12 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`ac_id`, `ac_name`, `ac_email`, `ac_phone`, `ac_password`, `ac_level`, `ac_created_at`, `ac_updated_at`) VALUES
-(1, 'Miqdad', 'miqdad.ihbs71777@gmail.com', '081298892112', '$2b$10$3KuBysVKgkVYbLVh6du9fuGwI/1icExWsj/zmSc59tiB0lLE8QYtC', 0, '2020-11-19 15:37:39', '2020-11-19 16:27:23'),
-(2, 'Isram Rasal', 'isramrasal@gmail.com', '082987651234', '$2b$10$/CHzMkiKAchaUWwpJukvruTwvGOqo7ExaGiuOo1QkGmu7ekBkxGmu', 1, '2020-11-19 15:38:47', '2020-11-19 16:27:27'),
-(3, 'Indra David Pesik', 'indra123@gmail.com', '089609960946', '$2b$10$/BfswUxHEz8Vw7fBRGtZzu/Dj9xpbxrXweLKqnXa2RYassnnGNsQm', 0, '2020-11-20 05:26:39', '2020-11-20 15:44:26');
+(1, 'Miqdad', 'miqdad.ihbs71777@gmail.com', '081298892112', '$2b$10$V.2q1oMG0qvUbv7bUulG5OF9GOf2hapPIlgx58mDSMgzy5bZKmMu6', 0, '2020-11-22 11:50:51', '2020-11-22 11:50:51'),
+(2, 'Royid Rosadi', 'rosyidrosadigmail.com', '081298892120', '$2b$10$6BwEmPGRyREI4tpnwoJVJux2m2RULuzPtbXlF7ijt9OpAMZ7vtOl6', 0, '2020-11-22 11:59:32', '2020-11-22 11:59:32'),
+(3, 'Indra David Pesik', 'ndradavid@gmail.com', '081298892130', '$2b$10$SJlRcSZ03NvFrqvN0N64k.dOSLePMtPZzkIBQUNnrvNqCshKfL/MW', 0, '2020-11-22 12:00:06', '2020-11-22 12:00:06'),
+(4, 'Isram Rasal', 'isramrasal@gmail.com', '082987651234', '$2b$10$ao/M2P196hr2Hl4JI6P3ROimejs9O0EEfq8jbra9O3JYQrEvmjeLi', 1, '2020-11-22 12:08:20', '2020-11-22 12:08:20'),
+(5, 'Engelbertus Hendro', 'hendro@gmail.com', '082987651121', '$2b$10$TF7PArSAiwWzxQbuvonOD.TeJiJsaG5QlRNRgl5T.g1UpBBeiIWZK', 1, '2020-11-22 12:09:56', '2020-11-22 12:09:56'),
+(6, 'Ahmad Farhan', 'farhan@gmail.com', '082987651222', '$2b$10$YakRc1kLNElFpU6AaD1YJuAOd2kV0gZKV2YvxTdSCHTx.7QHKamtm', 1, '2020-11-22 12:11:06', '2020-11-22 12:11:06');
 
 -- --------------------------------------------------------
 
@@ -73,7 +76,9 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`cn_id`, `ac_id`, `cn_company`, `cn_position`, `cn_field`, `cn_city`, `cn_description`, `cn_instagram`, `cn_linkedin`, `cn_profile`, `cn_created_at`, `cn_updated_at`) VALUES
-(1, 2, 'CV. FORKINDO', 'CEO', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'image-1605878042630.jpg', '2020-11-19 15:38:47', '2020-11-20 13:14:02');
+(1, 4, 'CV. FORKINDO', 'CEO', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606048186483.jpg', '2020-11-22 12:08:20', '2020-11-22 12:29:46'),
+(2, 5, 'E-Recruitment Corp', 'CEO', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', 'IMG-1606048373263.jpg', '2020-11-22 12:09:56', '2020-11-22 12:32:53'),
+(3, 6, 'Lokeren Corp', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'lo_keren', 'loker_en', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2020-11-22 12:35:32');
 
 -- --------------------------------------------------------
 
@@ -98,8 +103,9 @@ CREATE TABLE `engineer` (
 --
 
 INSERT INTO `engineer` (`en_id`, `ac_id`, `en_job_title`, `en_job_type`, `en_domicile`, `en_description`, `en_profile`, `en_created_at`, `en_updated_at`) VALUES
-(1, 1, 'Android Developer', 'full time', 'Jakarta', '-', 'image-1605889012669.jpg', '2020-11-19 15:37:39', '2020-11-20 16:16:52'),
-(2, 3, 'Fullstack Android Developer', 'full time', 'Jogja', '-', NULL, '2020-11-20 05:26:39', '2020-11-20 05:29:53');
+(1, 1, 'Backend', 'full time', 'Bekasi', 'Very Good', 'IMG-1606047862698.jpg', '2020-11-22 11:50:51', '2020-11-22 12:24:22'),
+(2, 2, 'Frontend', 'freelance', 'Mojokerto', 'Very Good', 'IMG-1606047904134.jpg', '2020-11-22 11:59:32', '2020-11-22 12:25:04'),
+(3, 3, 'Fullstack Android', 'full time', 'Manado', 'Expert', 'IMG-1606048071665.jpg', '2020-11-22 12:00:06', '2020-11-22 12:27:51');
 
 -- --------------------------------------------------------
 
@@ -122,7 +128,11 @@ CREATE TABLE `experience` (
 --
 
 INSERT INTO `experience` (`ex_id`, `en_id`, `ex_position`, `ex_company`, `ex_start`, `ex_end`, `ex_description`) VALUES
-(1, 1, 'Staff IT', 'Bank BNI', '2020-10-01', '2020-11-01', 'Membuat aplikasi bank');
+(1, 3, 'Staff IT', 'Bank BNI', '2020-10-01', '2020-11-01', 'Membuat aplikasi bank'),
+(2, 3, 'Manager', 'Kompas', '2018-10-12', '2020-11-30', 'Membuat web berita kompas'),
+(3, 1, 'Staff Engineer', 'PT. Wasa Mitra Engineering', '2020-10-01', '2020-11-30', 'Membuat web pendataan gudang'),
+(4, 1, 'IT Support', 'Gunadarma University Computing Center', '2018-07-11', '2020-11-22', 'Maintenance jaringan'),
+(5, 2, 'IT Desaigner', 'Mangaku', '2018-07-11', '2020-11-22', 'Merender gambar dan resolusi');
 
 -- --------------------------------------------------------
 
@@ -146,7 +156,9 @@ CREATE TABLE `hire` (
 --
 
 INSERT INTO `hire` (`hr_id`, `en_id`, `pj_id`, `hr_price`, `hr_message`, `hr_status`, `hr_date_confirm`, `hr_created_at`) VALUES
-(1, 1, 1, 10000000, 'Kami tunggu persetujuannya', 'wait', NULL, '2020-11-19 17:26:51');
+(1, 1, 1, 10000000, 'Kami tunggu persetujuannya', 'approve', '2020-11-22 20:05:39', '2020-11-22 13:05:19'),
+(2, 3, 2, 10000000, 'Kami tunggu persetujuannya', 'wait', '2020-11-22 20:06:18', '2020-11-22 13:05:29'),
+(4, 2, 2, 10000000, 'Kami tunggu persetujuannya', 'wait', NULL, '2020-11-22 13:06:01');
 
 -- --------------------------------------------------------
 
@@ -171,7 +183,8 @@ CREATE TABLE `portofolio` (
 --
 
 INSERT INTO `portofolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
-(1, 1, 'SSS', 'Aplikasi SSS', '-', '-', 'SSS', 'aplikasi mobile', 'image-1605889270165.jpg');
+(1, 1, 'EAM WME', 'Web pendataan barang', '-', '-', '-', '', 'IMG-1606049701878.png'),
+(2, 3, 'Kompas News', 'Aplikasi berita', '-', '-', '-', '', 'IMG-1606049886521.png');
 
 -- --------------------------------------------------------
 
@@ -195,7 +208,8 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`pj_id`, `cn_id`, `pj_project_name`, `pj_description`, `pj_deadline`, `pj_image`, `pj_created_at`, `pj_updated_at`) VALUES
-(1, 1, 'Aplikasi Android E-Gaji Berkala', 'Membuat Aplikasi Android Untuk Pengelolaan Gaji Berkala', '2021-03-01', 'image-1605889332907.jpg', '2020-11-19 17:25:36', '2020-11-20 16:22:12');
+(1, 3, 'Aplikasi Android E-Gaji Berkala', 'Membuat Aplikasi Android Untuk Pengelolaan Gaji Berkala', '2021-03-01', 'IMG-1606050058662.jpg', '2020-11-22 13:00:58', '2020-11-22 13:00:58'),
+(2, 1, 'Web Pendataan Barang', 'Membuat Website Pendataan dan Pemeliharaan Asset', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2020-11-22 13:02:41');
 
 -- --------------------------------------------------------
 
@@ -214,7 +228,14 @@ CREATE TABLE `skill` (
 --
 
 INSERT INTO `skill` (`sk_id`, `en_id`, `sk_skill_name`) VALUES
-(1, 1, 'Kotlin');
+(1, 1, 'Kotlin'),
+(3, 2, 'Javascript'),
+(4, 3, 'PHP'),
+(5, 1, 'PHP'),
+(6, 1, 'Javascript'),
+(7, 3, 'Golang'),
+(8, 3, 'Kotlin'),
+(9, 2, 'Kotlin');
 
 --
 -- Indexes for dumped tables
@@ -284,49 +305,49 @@ ALTER TABLE `skill`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `engineer`
 --
 ALTER TABLE `engineer`
-  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `experience`
 --
 ALTER TABLE `experience`
-  MODIFY `ex_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ex_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `hire`
 --
 ALTER TABLE `hire`
-  MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `portofolio`
 --
 ALTER TABLE `portofolio`
-  MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `pj_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pj_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `sk_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sk_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

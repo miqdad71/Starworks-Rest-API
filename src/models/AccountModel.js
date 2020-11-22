@@ -26,8 +26,8 @@ module.exports = {
           } else {
             await createCompany({
               ac_id: res.insertId,
-              cn_perusahan: data.cn_perusahan,
-              cn_jabatan: data.cn_jabatan
+              cn_company: data.cn_company,
+              cn_position: data.cn_position
             })
           }
 

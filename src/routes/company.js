@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router()
 
 const {
-    getAllCompany,
-    getCompanyById,
-    updateCompany
+  getAllCompany,
+  getCompanyById,
+  updateCompany
 } = require('../controllers/CompanyController')
 
 const {
-    authorization
+  authorization
 } = require('../middleware/auth')
 
 const uploadImage = require('../middleware/multer')
