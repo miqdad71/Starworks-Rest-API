@@ -18,6 +18,24 @@ module.exports = {
     })
   },
 
+  getAllProject: () => {
+    return new Promise((resolve, reject) => {
+      const query = `
+        SELECT *
+          FROM project
+         WHERE ?
+      `
+
+      dbConnect.query(query, async (error, results, _fields) => {
+        if (!error) {
+          resolve(results)
+        } else {
+          reject(error)
+        }
+      })
+    })
+  },
+
   getAllProjectById: (cnId) => {
     return new Promise((resolve, reject) => {
       const query = `
