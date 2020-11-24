@@ -21,7 +21,7 @@ const {
 
 module.exports = {
 
-  getAllProject: async (req, res, _next) => {
+  getAllProject: async (_req, res, _next) => {
     try {
       const result = await getAllProject()
 
