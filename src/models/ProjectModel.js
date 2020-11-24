@@ -23,7 +23,6 @@ module.exports = {
       const query = `
         SELECT *
           FROM project
-         WHERE ?
       `
 
       dbConnect.query(query, (error, results, _fields) => {
