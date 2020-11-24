@@ -26,7 +26,7 @@ module.exports = {
          WHERE ?
       `
 
-      dbConnect.query(query, async (error, results, _fields) => {
+      dbConnect.query(query, (error, results, _fields) => {
         if (!error) {
           resolve(results)
         } else {
