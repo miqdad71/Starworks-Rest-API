@@ -80,7 +80,7 @@ module.exports = {
             ac_email: findData[0].ac_email
           }
 
-          JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '1m' }, (err, token) => {
+          JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '30d' }, (err, token) => {
             if (token) {
               const result = {
                 ...payload,
