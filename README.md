@@ -10,7 +10,7 @@ API StarworkS ini dibuat untuk menangani backend dari request client ke server..
 ## Built With
 
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html)
-[![Node.js](https://img.shields.io/badge/Node.js-v.14.15.0-green.svg?style=rounded-square)](https://nodejs.org/en/download/)
+[![Node.js](https://img.shields.io/badge/Node.js-v.14.15.0-green.svg?style=rounded-square)](https://nodejs.org/)
 
 ## Requirements
 
@@ -49,7 +49,7 @@ JWT_KEY =YOUR_JWT_KEY
 https://documenter.getpostman.com/view/13426001/TVetc6jx
 
 
-## End-Point
+<!-- ## End-Point
 
  ```
 1. Account
@@ -158,4 +158,4 @@ https://documenter.getpostman.com/view/13426001/TVetc6jx
 
     - Update Status Hire [PUT]
       http://localhost/4000/hire/{id}
-```
+``` -->
