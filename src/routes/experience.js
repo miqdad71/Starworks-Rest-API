@@ -2,15 +2,15 @@ const express = require('express')
 const router = express.Router()
 
 const {
-    createExp,
-    getAllExpById,
-    getExpById,
-    updateExp,
-    deleteExp
-} = require('../controllers/ExperienceController')
+  createExp,
+  getAllExpById,
+  getExpById,
+  updateExp,
+  deleteExp
+} = require('../controllers/experience')
 
 const {
-    authorization
+  authorization
 } = require('../middleware/auth')
 
 router.post('/', authorization, createExp)

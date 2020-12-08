@@ -7,7 +7,7 @@ const {
   getSkillById,
   updateSkill,
   deleteSkill
-} = require('../controllers/SkillController')
+} = require('../controllers/skill')
 
 const {
   authorization

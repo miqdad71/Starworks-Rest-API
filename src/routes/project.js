@@ -8,7 +8,7 @@ const {
   getProjectById,
   updateProject,
   deleteProject
-} = require('../controllers/ProjectController')
+} = require('../controllers/project')
 
 const {
   authorization

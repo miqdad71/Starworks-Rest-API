@@ -2,14 +2,14 @@ const express = require('express')
 const router = express.Router()
 
 const {
-    createHire,
-    getAllHireByEngineer,
-    getAllHireByProject,
-    updateHireStatus
-} = require('../controllers/HireController')
+  createHire,
+  getAllHireByEngineer,
+  getAllHireByProject,
+  updateHireStatus
+} = require('../controllers/hire')
 
 const {
-    authorization
+  authorization
 } = require('../middleware/auth')
 
 router.post('/', authorization, createHire)

@@ -5,7 +5,7 @@ const {
   getAllCompany,
   getCompanyById,
   updateCompany
-} = require('../controllers/CompanyController')
+} = require('../controllers/company')
 
 const {
   authorization
