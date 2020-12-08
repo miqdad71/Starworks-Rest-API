@@ -4,7 +4,7 @@ const {
   getAllHireByProject,
   getHireById,
   updateHireStatus
-} = require('../models/HireModel')
+} = require('../models/hire')
 
 const {
   statusGet,

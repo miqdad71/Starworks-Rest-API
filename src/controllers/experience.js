@@ -4,7 +4,7 @@ const {
   getExpById,
   updateExp,
   deleteExp
-} = require('../models/ExperienceModel')
+} = require('../models/experience')
 
 const {
   statusGet,

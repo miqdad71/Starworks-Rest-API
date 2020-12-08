@@ -7,7 +7,7 @@ const {
   updateAccount,
   getAccountById,
   getAccountByEmail
-} = require('../models/AccountModel')
+} = require('../models/account')
 
 const {
   statusRegistration,

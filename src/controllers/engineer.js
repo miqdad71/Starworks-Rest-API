@@ -4,7 +4,7 @@ const {
   getEngineerById,
   updateEngineer,
   getFilterEngineer
-} = require('../models/EngineerModel')
+} = require('../models/engineer')
 
 const isEmpty = require('lodash.isempty')
 

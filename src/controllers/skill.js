@@ -4,7 +4,7 @@ const {
   getSkillById,
   updateSkill,
   deleteSkill
-} = require('../models/SkillModel')
+} = require('../models/skill')
 
 const {
   statusGet,

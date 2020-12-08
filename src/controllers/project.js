@@ -5,7 +5,7 @@ const {
   getProjectById,
   updateProject,
   deleteProject
-} = require('../models/ProjectModel')
+} = require('../models/project')
 
 const {
   statusGet,

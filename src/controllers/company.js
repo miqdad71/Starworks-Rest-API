@@ -2,7 +2,7 @@ const {
   getAllCompany,
   getCompanyById,
   updateCompany
-} = require('../models/CompanyModel')
+} = require('../models/company')
 
 const {
   statusGet,

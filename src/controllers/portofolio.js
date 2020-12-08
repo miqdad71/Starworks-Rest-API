@@ -4,7 +4,7 @@ const {
   getPortofolioById,
   updatePortofolio,
   deletePortofolio
-} = require('../models/PortofolioModel')
+} = require('../models/portofolio')
 
 const {
   statusGet,

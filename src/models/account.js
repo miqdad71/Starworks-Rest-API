@@ -1,7 +1,7 @@
 const dbConnect = require('../../config/db.config')
 
-const { createEngineer } = require('../models/EngineerModel')
-const { createCompany } = require('../models/CompanyModel')
+const { createEngineer } = require('./engineer')
+const { createCompany } = require('./company')
 
 module.exports = {
   createAccount: (data) => {
