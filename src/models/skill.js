@@ -1,4 +1,4 @@
-const dbConnect = require('../../config/db.config')
+const dbConnect = require('../helpers/db')
 
 module.exports = {
   createSkill: (data) => {

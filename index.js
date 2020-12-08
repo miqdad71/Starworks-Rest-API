@@ -1,22 +1,11 @@
-// require('body-parser').config()
 require('dotenv').config()
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
-// const router = require('./src/routers/account')
-// const router2 = require('./src/routers/project')
-// const router3 = require('./src/routers/hire')
-// const router4 = require('./src/routers/engineer')
-// const router5 = require('./src/routers/ability')
-// const router6 = require('./src/routers/experience')
-// const router7 = require('./src/routers/portofolio')
-// const router8 = require('./src/routers/company')
 const morgan = require('morgan')
 const cors = require('cors')
 const port = process.env.PORT
 
-// routes sources
-// const indexRouter = require('./src/routes/index')
 const accountRouter = require('./src/routes/account')
 const engineerRouter = require('./src/routes/engineer')
 const companyRouter = require('./src/routes/company')
