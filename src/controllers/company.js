@@ -45,19 +45,20 @@ module.exports = {
 
   updateCompany: async (req, res, _next) => {
     const { cnId } = req.params
-    req.body.image = req.file === undefined ? '' : req.file.filename
-
-    const data = {
-      ...req.body,
-      cn_profile: req.body.image
-    }
-
-    delete data.image
 
     try {
       const findData = await getCompanyById(cnId)
 
       if (findData.length) {
+        req.body.image = req.file === undefined ? findData[0].cn_profile : req.file.filename
+
+        const data = {
+          ...req.body,
+          cn_profile: req.body.image
+        }
+
+        delete data.image
+
         const result = await updateCompany(cnId, data)
 
         if (result.affectedRows) {

@@ -11,8 +11,6 @@ const {
   hashPassword
 } = require('../middleware/auth')
 
-// const uploadImage = require('../middleware/multer')
-
 router.post('/', hashPassword, createAccount)
 router.put('/:acId', hashPassword, updateAccount)
 router.post('/login', loginAccount)

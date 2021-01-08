@@ -16,10 +16,6 @@ const {
   statusNotFound
 } = require('../helpers/status')
 
-const {
-  nestedEngineer
-} = require('../helpers/nestedJson')
-
 module.exports = {
   getAllEngineer: async (req, res, _next) => {
     let { search, limit, page } = req.query
@@ -120,19 +116,20 @@ module.exports = {
 
   updateEngineer: async (req, res, _next) => {
     const { enId } = req.params
-    req.body.image = req.file === undefined ? '' : req.file.filename
-
-    const data = {
-      ...req.body,
-      en_profile: req.body.image
-    }
-
-    delete data.image
 
     try {
       const findData = await getEngineerById(enId)
 
       if (findData.length) {
+        req.body.image = req.file === undefined ? findData[0].en_profile : req.file.filename
+
+        const data = {
+          ...req.body,
+          en_profile: req.body.image
+        }
+
+        delete data.image
+
         const result = await updateEngineer(enId, data)
 
         if (result.affectedRows) {

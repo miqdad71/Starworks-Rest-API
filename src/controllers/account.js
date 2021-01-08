@@ -76,8 +76,13 @@ module.exports = {
         if (match) {
           const payload = {
             ac_id: findData[0].ac_id,
+            en_id: findData[0].en_id,
+            cn_id: findData[0].cn_id,
             ac_name: findData[0].ac_name,
-            ac_email: findData[0].ac_email
+            ac_email: findData[0].ac_email,
+            ac_level: findData[0].ac_level,
+            ac_phone: findData[0].ac_phone,
+            ac_password: findData[0].ac_password
           }
 
           JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '30d' }, (err, token) => {

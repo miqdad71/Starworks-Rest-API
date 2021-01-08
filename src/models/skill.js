@@ -21,7 +21,8 @@ module.exports = {
   getAllSkillById: (enId) => {
     return new Promise((resolve, reject) => {
       const query = `
-        SELECT sk_skill_name
+        SELECT sk_id,
+               sk_skill_name
           FROM skill
          WHERE ?
       `

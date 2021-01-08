@@ -100,3 +100,26 @@ module.exports = {
     })
   }
 }
+
+
+
+
+
+// getAllHireByEngineer: (enId) => {
+//   return new Promise((resolve, reject) => {
+//     const query = `
+//     SELECT h.hr_id, h.en_id, p.pj_id, p.pj_project_name, p.pj_description, hr_price, hr_message, hr_status, hr_date_confirm, hr_created_at
+//     FROM hire as h 
+//     LEFT JOIN project as p ON p.pj_id = h.pj_id
+//     WHERE h.en_id = 1
+//     `
+
+//     dbConnect.query(query, { en_id: enId }, (error, results, _fields) => {
+//       if (!error) {
+//         resolve(results)
+//       } else {
+//         reject(error)
+//       }
+//     })
+//   })
+// },

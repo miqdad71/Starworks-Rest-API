@@ -20,7 +20,6 @@ const {
 } = require('../helpers/status')
 
 module.exports = {
-
   getAllProject: async (_req, res, _next) => {
     try {
       const result = await getAllProject()
@@ -92,19 +91,20 @@ module.exports = {
 
   updateProject: async (req, res, _next) => {
     const { pjId } = req.params
-    req.body.image = req.file === undefined ? '' : req.file.filename
-
-    const data = {
-      ...req.body,
-      pj_image: req.body.image
-    }
-
-    delete data.image
 
     try {
       const findData = await getProjectById(pjId)
 
       if (findData.length) {
+        req.body.image = req.file === undefined ? findData[0].pj_image : req.file.filename
+
+        const data = {
+          ...req.body,
+          pj_image: req.body.image
+        }
+
+        delete data.image
+
         const result = await updateProject(pjId, data)
 
         if (result.affectedRows) {

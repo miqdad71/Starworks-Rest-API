@@ -1,7 +1,6 @@
 const multer = require('multer')
 
 const {
-  statusCreate,
   statusError
 } = require('../helpers/status')
 
