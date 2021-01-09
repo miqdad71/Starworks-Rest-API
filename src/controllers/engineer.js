@@ -48,7 +48,7 @@ module.exports = {
       }
 
       if (result.length) {
-        statusGet(res, nestedEngineer(result))
+        statusGet(res, result)
       } else {
         statusNotFound(res)
       }
@@ -104,7 +104,7 @@ module.exports = {
       }
 
       if (result.length) {
-        statusGet(res, nestedEngineer(result))
+        statusGet(res, result)
       } else {
         statusNotFound(res)
       }

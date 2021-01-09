@@ -74,11 +74,11 @@ module.exports = {
     }
   },
 
-  updatePortfolio: async (req, res, _next) => {
+  updatePortofolio: async (req, res, _next) => {
     const { prId } = req.params
 
     try {
-      const findData = await getPortfolioById(prId)
+      const findData = await getPortofolioById(prId)
 
       if (findData.length) {
         req.body.image = req.file === undefined ? findData[0].pr_image : req.file.filename
@@ -90,7 +90,7 @@ module.exports = {
 
         delete data.image
 
-        const result = await updatePortfolio(prId, data)
+        const result = await updatePortofolio(prId, data)
 
         if (result.affectedRows) {
           statusUpdate(res)
