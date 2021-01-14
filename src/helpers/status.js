@@ -7,6 +7,15 @@ module.exports = {
     })
   },
 
+  statusGetPaginate: (res, result, length) => {
+    res.status(200).send({
+      success: true,
+      message: 'Success to get data',
+      totalPages: length,
+      data: result
+    })
+  },
+
   statusLogin: (res, result) => {
     res.status(200).send({
       success: true,
@@ -25,6 +34,13 @@ module.exports = {
 
   statusTokenError: (res, result) => {
     res.status(403).send({
+      success: false,
+      message: result.message
+    })
+  },
+
+  statusTokenExpired: (res, result) => {
+    res.status(400).send({
       success: false,
       message: result.message
     })
@@ -125,6 +141,13 @@ module.exports = {
     res.status(404).send({
       success: false,
       message: result.message
+    })
+  },
+
+  statusAuthorization: (res) => {
+    res.status(404).send({
+      success: false,
+      message: 'Access denied!'
     })
   }
 }

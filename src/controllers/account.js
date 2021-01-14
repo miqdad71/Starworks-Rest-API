@@ -3,6 +3,13 @@ const bcrypt = require('bcrypt')
 const JWT = require('jsonwebtoken')
 
 const {
+  createAccount,
+  updateAccount,
+  getAccountById,
+  getAccountByEmail
+} = require('../models/account')
+
+const {
   getEngineerById
 } = require('../models/engineer')
 
@@ -11,13 +18,7 @@ const {
 } = require('../models/company')
 
 const {
-  createAccount,
-  updateAccount,
-  getAccountById,
-  getAccountByEmail
-} = require('../models/account')
-
-const {
+  statusGet,
   statusRegistration,
   statusRegistrationFail,
   statusRegistrationUnique,
@@ -73,13 +74,33 @@ module.exports = {
     }
   },
 
+  updateAccountPass: async (req, res, _next) => {
+    try {
+      const { acId } = req.params
+      const findData = await getAccountById(acId)
+
+      if (findData.length) {
+        const result = await updateAccount(acId, req.body)
+
+        if (result.affectedRows) {
+          statusUpdate(res)
+        } else {
+          statusUpdateFail(res)
+        }
+      } else {
+        statusNotFound(res)
+      }
+    } catch (err) {
+      statusServerError(res)
+    }
+  },
+
   loginAccount: async (req, res, _next) => {
     try {
       const { email, password } = req.body
       const findData = await getAccountByEmail(email)
 
       if (findData.length) {
-        const match = await bcrypt.compare(password, findData[0].ac_password)
         let result
 
         if (findData[0].ac_level === 0) {
@@ -88,46 +109,85 @@ module.exports = {
           result = await getCompanyById(findData[0].ac_id)
         }
 
-        if (match) {
-          let payload
-          if (findData[0].ac_level === 0) {
-            payload = {
-              en_id: result[0].en_id,
-              ac_id: findData[0].ac_id,
-              ac_name: findData[0].ac_name,
-              ac_level: findData[0].ac_level,
-              ac_email: findData[0].ac_email
-            }
-          } else {
-            payload = {
-              cn_id: result[0].cn_id,
-              ac_id: findData[0].ac_id,
-              ac_name: findData[0].ac_name,
-              ac_level: findData[0].ac_level,
-              ac_email: findData[0].ac_email
-            }
-          }
+        if (result.length) {
+          const match = await bcrypt.compare(password, findData[0].ac_password)
 
-          JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '30d' }, (err, token) => {
-            if (token) {
-              const result = {
-                ...payload,
-                token: token
+          if (match) {
+            let payload
+
+            if (findData[0].ac_level === 0) {
+              payload = {
+                en_id: result[0].en_id,
+                ac_id: findData[0].ac_id,
+                ac_name: findData[0].ac_name,
+                ac_level: findData[0].ac_level,
+                ac_email: findData[0].ac_email
               }
-
-              statusLogin(res, result)
             } else {
-              statusTokenError(res, err)
+              payload = {
+                cn_id: result[0].cn_id,
+                ac_id: findData[0].ac_id,
+                ac_name: findData[0].ac_name,
+                ac_level: findData[0].ac_level,
+                ac_email: findData[0].ac_email
+              }
             }
-          })
+
+            JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '30d' }, (err, token) => {
+              if (token) {
+                JWT.verify(token, process.env.JWT_KEY, (_err, data) => {
+                  const result = {
+                    ...payload,
+                    exp: data.exp,
+                    token: token
+                  }
+
+                  statusLogin(res, result)
+                })
+              } else {
+                statusTokenError(res, err)
+              }
+            })
+          } else {
+            statusLoginFail(res)
+          }
         } else {
-          statusLoginFail(res)
+          statusNotFoundAccount(res)
         }
       } else {
         statusNotFoundAccount(res)
       }
     } catch (err) {
-      console.log(err)
+      statusServerError(res)
+    }
+  },
+
+  checkEmail: async (req, res, _next) => {
+    try {
+      const { email } = req.body
+      const result = await getAccountByEmail(email)
+
+      if (result.length) {
+        statusGet(res, result)
+      } else {
+        statusNotFoundAccount(res)
+      }
+    } catch (err) {
+      statusServerError(res)
+    }
+  },
+
+  detailAccount: async (req, res, _next) => {
+    try {
+      const { acId } = req.params
+      const result = await getAccountById(acId)
+
+      if (result.length) {
+        statusGet(res, result)
+      } else {
+        statusNotFoundAccount(res)
+      }
+    } catch (err) {
       statusServerError(res)
     }
   }

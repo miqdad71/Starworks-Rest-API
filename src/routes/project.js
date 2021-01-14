@@ -3,7 +3,6 @@ const router = express.Router()
 
 const {
   createProject,
-  getAllProject,
   getAllProjectById,
   getProjectById,
   updateProject,
@@ -17,7 +16,6 @@ const {
 const uploadImage = require('../middleware/multer')
 
 router.post('/', authorization, uploadImage, createProject)
-router.get('/', authorization, getAllProject)
 router.get('/:cnId', authorization, getAllProjectById)
 router.get('/detail/:pjId', authorization, getProjectById)
 router.put('/:pjId', authorization, uploadImage, updateProject)

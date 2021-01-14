@@ -18,29 +18,13 @@ module.exports = {
     })
   },
 
-  getAllProject: () => {
-    return new Promise((resolve, reject) => {
-      const query = `
-        SELECT *
-          FROM project
-      `
-
-      dbConnect.query(query, (error, results, _fields) => {
-        if (!error) {
-          resolve(results)
-        } else {
-          reject(error)
-        }
-      })
-    })
-  },
-
   getAllProjectById: (cnId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT *
           FROM project
          WHERE ?
+      ORDER BY pj_id DESC
       `
 
       dbConnect.query(query, { cn_id: cnId }, (error, results, _fields) => {

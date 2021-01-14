@@ -1,8 +1,8 @@
 const {
   createHire,
   getAllHireByEngineer,
-  getAllHireByCompany,
   getAllHireByProject,
+  getAllHireByCompany,
   getHireById,
   updateHireStatus
 } = require('../models/hire')
@@ -34,11 +34,11 @@ module.exports = {
     }
   },
 
-  getAllHireByCompany: async (req, res, _next) => {
-    const { cnId } = req.params
+  getAllHireByProject: async (req, res, _next) => {
+    const { pjId } = req.params
 
     try {
-      const result = await getAllHireByCompany(cnId)
+      const result = await getAllHireByProject(pjId)
 
       if (result.length) {
         statusGet(res, result)
@@ -46,15 +46,17 @@ module.exports = {
         statusNotFound(res)
       }
     } catch (error) {
+      console.error(error)
       statusServerError(res)
     }
   },
 
-  getAllHireByProject: async (req, res, _next) => {
-    const { pjId } = req.params
+  getAllHireByCompany: async (req, res, _next) => {
+    const { cnId } = req.params
+    const { status } = req.query
 
     try {
-      const result = await getAllHireByProject(pjId)
+      const result = await getAllHireByCompany(cnId, status)
 
       if (result.length) {
         statusGet(res, result)
@@ -77,6 +79,7 @@ module.exports = {
         statusCreateFail(res)
       }
     } catch (err) {
+      console.log(err)
       statusServerError(res)
     }
   },

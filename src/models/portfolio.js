@@ -1,10 +1,10 @@
 const dbConnect = require('../helpers/db')
 
 module.exports = {
-  createPortofolio: (data) => {
+  createPortfolio: (data) => {
     return new Promise((resolve, reject) => {
       const query = `
-        INSERT INTO portofolio
+        INSERT INTO portfolio
                 SET ?
       `
 
@@ -18,12 +18,13 @@ module.exports = {
     })
   },
 
-  getAllPortofolioById: (enId) => {
+  getAllPortfolioById: (enId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT *
-          FROM portofolio
+          FROM portfolio
          WHERE ?
+      ORDER BY pr_id DESC
       `
 
       dbConnect.query(query, { en_id: enId }, (error, results, _fields) => {
@@ -36,11 +37,11 @@ module.exports = {
     })
   },
 
-  getPortofolioById: (prId) => {
+  getPortfolioById: (prId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT *
-          FROM portofolio
+          FROM portfolio
          WHERE ?
       `
 
@@ -54,10 +55,10 @@ module.exports = {
     })
   },
 
-  updatePortofolio: (prId, data) => {
+  updatePortfolio: (prId, data) => {
     return new Promise((resolve, reject) => {
       const query = `
-        UPDATE portofolio
+        UPDATE portfolio
            SET ?
          WHERE pr_id = ${prId}
       `
@@ -72,10 +73,10 @@ module.exports = {
     })
   },
 
-  deletePortofolio: (prId) => {
+  deletePortfolio: (prId) => {
     return new Promise((resolve, reject) => {
       const query = `
-        DELETE FROM portofolio
+        DELETE FROM portfolio
          WHERE ?
       `
 

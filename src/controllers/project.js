@@ -1,6 +1,5 @@
 const {
   createProject,
-  getAllProject,
   getAllProjectById,
   getProjectById,
   updateProject,
@@ -20,20 +19,6 @@ const {
 } = require('../helpers/status')
 
 module.exports = {
-  getAllProject: async (_req, res, _next) => {
-    try {
-      const result = await getAllProject()
-
-      if (result.length) {
-        statusGet(res, result)
-      } else {
-        statusNotFound(res)
-      }
-    } catch (error) {
-      statusServerError(res)
-    }
-  },
-
   getAllProjectById: async (req, res, _next) => {
     const { cnId } = req.params
 
@@ -85,6 +70,7 @@ module.exports = {
         statusCreateFail(res)
       }
     } catch (err) {
+      console.error(err)
       statusServerError(res)
     }
   },
