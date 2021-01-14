@@ -3,6 +3,14 @@ const bcrypt = require('bcrypt')
 const JWT = require('jsonwebtoken')
 
 const {
+  getEngineerById
+} = require('../models/engineer')
+
+const {
+  getCompanyById
+} = require('../models/company')
+
+const {
   createAccount,
   updateAccount,
   getAccountById,
@@ -72,17 +80,32 @@ module.exports = {
 
       if (findData.length) {
         const match = await bcrypt.compare(password, findData[0].ac_password)
+        let result
+
+        if (findData[0].ac_level === 0) {
+          result = await getEngineerById(findData[0].ac_id)
+        } else {
+          result = await getCompanyById(findData[0].ac_id)
+        }
 
         if (match) {
-          const payload = {
-            ac_id: findData[0].ac_id,
-            en_id: findData[0].en_id,
-            cn_id: findData[0].cn_id,
-            ac_name: findData[0].ac_name,
-            ac_email: findData[0].ac_email,
-            ac_level: findData[0].ac_level,
-            ac_phone: findData[0].ac_phone,
-            ac_password: findData[0].ac_password
+          let payload
+          if (findData[0].ac_level === 0) {
+            payload = {
+              en_id: result[0].en_id,
+              ac_id: findData[0].ac_id,
+              ac_name: findData[0].ac_name,
+              ac_level: findData[0].ac_level,
+              ac_email: findData[0].ac_email
+            }
+          } else {
+            payload = {
+              cn_id: result[0].cn_id,
+              ac_id: findData[0].ac_id,
+              ac_name: findData[0].ac_name,
+              ac_level: findData[0].ac_level,
+              ac_email: findData[0].ac_email
+            }
           }
 
           JWT.sign({ payload }, process.env.JWT_KEY, { expiresIn: '30d' }, (err, token) => {
@@ -104,6 +127,7 @@ module.exports = {
         statusNotFoundAccount(res)
       }
     } catch (err) {
+      console.log(err)
       statusServerError(res)
     }
   }

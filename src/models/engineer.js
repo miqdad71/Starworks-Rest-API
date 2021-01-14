@@ -119,7 +119,7 @@ module.exports = {
     })
   },
 
-  getEngineerById: (enId) => {
+  getEngineerById: (acId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT en.en_id,
@@ -132,10 +132,10 @@ module.exports = {
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
-         WHERE ?
+         WHERE ac.?
       `
 
-      dbConnect.query(query, { en_id: enId }, (error, results, _fields) => {
+      dbConnect.query(query, { ac_id: acId }, (error, results, _fields) => {
         if (!error) {
           resolve(results)
         } else {

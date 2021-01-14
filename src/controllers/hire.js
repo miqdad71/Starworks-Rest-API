@@ -1,6 +1,7 @@
 const {
   createHire,
   getAllHireByEngineer,
+  getAllHireByCompany,
   getAllHireByProject,
   getHireById,
   updateHireStatus
@@ -22,6 +23,22 @@ module.exports = {
 
     try {
       const result = await getAllHireByEngineer(enId)
+
+      if (result.length) {
+        statusGet(res, result)
+      } else {
+        statusNotFound(res)
+      }
+    } catch (error) {
+      statusServerError(res)
+    }
+  },
+
+  getAllHireByCompany: async (req, res, _next) => {
+    const { cnId } = req.params
+
+    try {
+      const result = await getAllHireByCompany(cnId)
 
       if (result.length) {
         statusGet(res, result)

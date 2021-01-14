@@ -37,17 +37,17 @@ module.exports = {
     })
   },
 
-  getCompanyById: (cnId) => {
+  getCompanyById: (acId) => {
     return new Promise((resolve, reject) => {
       const query = `
         SELECT *
           FROM company cn
           JOIN account ac
             ON ac.ac_id = cn.ac_id
-         WHERE ?
+         WHERE ac.?
       `
 
-      dbConnect.query(query, { cn_id: cnId }, (error, results, _fields) => {
+      dbConnect.query(query, { ac_id: acId }, (error, results, _fields) => {
         if (!error) {
           resolve(results)
         } else {
