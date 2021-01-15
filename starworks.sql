@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jan 2021 pada 14.38
+-- Waktu pembuatan: 15 Jan 2021 pada 15.38
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -47,7 +47,7 @@ INSERT INTO `account` (`ac_id`, `ac_name`, `ac_email`, `ac_phone`, `ac_password`
 (2, 'Royid Rosadi', 'rosyidrosadi@gmail.com', '081298892120', '$2b$10$6BwEmPGRyREI4tpnwoJVJux2m2RULuzPtbXlF7ijt9OpAMZ7vtOl6', 0, '2020-11-22 11:59:32', '2021-01-05 03:59:21'),
 (3, 'Indra David Pesik', 'ndradavid@gmail.com', '081298892130', '$2b$10$SJlRcSZ03NvFrqvN0N64k.dOSLePMtPZzkIBQUNnrvNqCshKfL/MW', 0, '2020-11-22 12:00:06', '2020-11-22 12:00:06'),
 (4, 'Ali Rohmansyah', 'ra@gmail.com', '082987651234', '$2b$10$ao/M2P196hr2Hl4JI6P3ROimejs9O0EEfq8jbra9O3JYQrEvmjeLi', 1, '2020-11-22 12:08:20', '2021-01-10 08:30:47'),
-(5, 'Abdul Richard', 'richardabd@gmail.com', '082987651121', '$2b$10$TF7PArSAiwWzxQbuvonOD.TeJiJsaG5QlRNRgl5T.g1UpBBeiIWZK', 1, '2020-11-22 12:09:56', '2021-01-05 06:26:26'),
+(5, 'Luqman', 'luqman@gmail.com', '082987651121', '$2b$10$TF7PArSAiwWzxQbuvonOD.TeJiJsaG5QlRNRgl5T.g1UpBBeiIWZK', 1, '2020-11-22 12:09:56', '2021-01-15 14:34:34'),
 (6, 'Ahmad Farhan', 'farhan@gmail.com', '082987651222', '$2b$10$YakRc1kLNElFpU6AaD1YJuAOd2kV0gZKV2YvxTdSCHTx.7QHKamtm', 1, '2020-11-22 12:11:06', '2020-11-22 12:11:06'),
 (7, 'Zaki Maulana', 'zakimaulana08@gmail.com', '0812988921234', '$2b$10$ki9nsvCZT20yUkc/sBAX9u37mB0uAf.bXodu1/aq.S99aufLLShCm', 0, '2020-11-22 14:51:19', '2021-01-05 06:25:32'),
 (8, 'Engelbertus Hendro', 'henddro@gmail.com', '082987651222', '$2b$10$fbX6Cq/LCqvFvSxA7hPl9ele1B9bOPh2g.WGg27kVkKki/ILF/wsC', 1, '2020-11-22 14:55:18', '2020-11-22 14:55:18');
@@ -79,9 +79,9 @@ CREATE TABLE `company` (
 
 INSERT INTO `company` (`cn_id`, `ac_id`, `cn_company`, `cn_position`, `cn_field`, `cn_city`, `cn_description`, `cn_instagram`, `cn_linkedin`, `cn_profile`, `cn_created_at`, `cn_updated_at`) VALUES
 (1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606048186483.jpg', '2020-11-22 12:08:20', '2021-01-05 06:27:27'),
-(2, 5, 'E-Recruitment Corp', 'CEO', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', 'IMG-1606048373263.jpg', '2020-11-22 12:09:56', '2020-11-22 12:32:53'),
-(3, 6, 'Lokeren Corp', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'lo_keren', 'loker_en', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2020-11-22 12:35:32'),
-(4, 8, 'E-recruitment', 'HRD', NULL, NULL, NULL, NULL, NULL, NULL, '2020-11-22 14:55:18', '2021-01-05 06:27:38');
+(2, 5, 'Go-Hire', 'CEO', 'Tambun', 'Bekasi', 'Regensi II', 'gohire', 'go_hire', 'IMG-1606048373263.jpg', '2020-11-22 12:09:56', '2021-01-15 14:36:03'),
+(3, 6, 'E-Hire', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'e_hire', 'ehire', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2021-01-15 14:36:18'),
+(4, 8, 'E-recruitment', 'HRD', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', NULL, '2020-11-22 14:55:18', '2021-01-15 14:33:59');
 
 -- --------------------------------------------------------
 
