@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2020 at 02:07 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Waktu pembuatan: 15 Jan 2021 pada 14.38
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account`
+-- Struktur dari tabel `account`
 --
 
 CREATE TABLE `account` (
@@ -39,21 +39,23 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `account`
+-- Dumping data untuk tabel `account`
 --
 
 INSERT INTO `account` (`ac_id`, `ac_name`, `ac_email`, `ac_phone`, `ac_password`, `ac_level`, `ac_created_at`, `ac_updated_at`) VALUES
 (1, 'Miqdad', 'miqdad.ihbs71777@gmail.com', '081298892112', '$2b$10$V.2q1oMG0qvUbv7bUulG5OF9GOf2hapPIlgx58mDSMgzy5bZKmMu6', 0, '2020-11-22 11:50:51', '2020-11-22 11:50:51'),
-(2, 'Royid Rosadi', 'rosyidrosadigmail.com', '081298892120', '$2b$10$6BwEmPGRyREI4tpnwoJVJux2m2RULuzPtbXlF7ijt9OpAMZ7vtOl6', 0, '2020-11-22 11:59:32', '2020-11-22 11:59:32'),
+(2, 'Royid Rosadi', 'rosyidrosadi@gmail.com', '081298892120', '$2b$10$6BwEmPGRyREI4tpnwoJVJux2m2RULuzPtbXlF7ijt9OpAMZ7vtOl6', 0, '2020-11-22 11:59:32', '2021-01-05 03:59:21'),
 (3, 'Indra David Pesik', 'ndradavid@gmail.com', '081298892130', '$2b$10$SJlRcSZ03NvFrqvN0N64k.dOSLePMtPZzkIBQUNnrvNqCshKfL/MW', 0, '2020-11-22 12:00:06', '2020-11-22 12:00:06'),
-(4, 'Isram Rasal', 'isramrasal@gmail.com', '082987651234', '$2b$10$ao/M2P196hr2Hl4JI6P3ROimejs9O0EEfq8jbra9O3JYQrEvmjeLi', 1, '2020-11-22 12:08:20', '2020-11-22 12:08:20'),
-(5, 'Engelbertus Hendro', 'hendro@gmail.com', '082987651121', '$2b$10$TF7PArSAiwWzxQbuvonOD.TeJiJsaG5QlRNRgl5T.g1UpBBeiIWZK', 1, '2020-11-22 12:09:56', '2020-11-22 12:09:56'),
-(6, 'Ahmad Farhan', 'farhan@gmail.com', '082987651222', '$2b$10$YakRc1kLNElFpU6AaD1YJuAOd2kV0gZKV2YvxTdSCHTx.7QHKamtm', 1, '2020-11-22 12:11:06', '2020-11-22 12:11:06');
+(4, 'Ali Rohmansyah', 'ra@gmail.com', '082987651234', '$2b$10$ao/M2P196hr2Hl4JI6P3ROimejs9O0EEfq8jbra9O3JYQrEvmjeLi', 1, '2020-11-22 12:08:20', '2021-01-10 08:30:47'),
+(5, 'Abdul Richard', 'richardabd@gmail.com', '082987651121', '$2b$10$TF7PArSAiwWzxQbuvonOD.TeJiJsaG5QlRNRgl5T.g1UpBBeiIWZK', 1, '2020-11-22 12:09:56', '2021-01-05 06:26:26'),
+(6, 'Ahmad Farhan', 'farhan@gmail.com', '082987651222', '$2b$10$YakRc1kLNElFpU6AaD1YJuAOd2kV0gZKV2YvxTdSCHTx.7QHKamtm', 1, '2020-11-22 12:11:06', '2020-11-22 12:11:06'),
+(7, 'Zaki Maulana', 'zakimaulana08@gmail.com', '0812988921234', '$2b$10$ki9nsvCZT20yUkc/sBAX9u37mB0uAf.bXodu1/aq.S99aufLLShCm', 0, '2020-11-22 14:51:19', '2021-01-05 06:25:32'),
+(8, 'Engelbertus Hendro', 'henddro@gmail.com', '082987651222', '$2b$10$fbX6Cq/LCqvFvSxA7hPl9ele1B9bOPh2g.WGg27kVkKki/ILF/wsC', 1, '2020-11-22 14:55:18', '2020-11-22 14:55:18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `company`
+-- Struktur dari tabel `company`
 --
 
 CREATE TABLE `company` (
@@ -72,18 +74,19 @@ CREATE TABLE `company` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `company`
+-- Dumping data untuk tabel `company`
 --
 
 INSERT INTO `company` (`cn_id`, `ac_id`, `cn_company`, `cn_position`, `cn_field`, `cn_city`, `cn_description`, `cn_instagram`, `cn_linkedin`, `cn_profile`, `cn_created_at`, `cn_updated_at`) VALUES
-(1, 4, 'CV. FORKINDO', 'CEO', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606048186483.jpg', '2020-11-22 12:08:20', '2020-11-22 12:29:46'),
+(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606048186483.jpg', '2020-11-22 12:08:20', '2021-01-05 06:27:27'),
 (2, 5, 'E-Recruitment Corp', 'CEO', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', 'IMG-1606048373263.jpg', '2020-11-22 12:09:56', '2020-11-22 12:32:53'),
-(3, 6, 'Lokeren Corp', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'lo_keren', 'loker_en', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2020-11-22 12:35:32');
+(3, 6, 'Lokeren Corp', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'lo_keren', 'loker_en', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2020-11-22 12:35:32'),
+(4, 8, 'E-recruitment', 'HRD', NULL, NULL, NULL, NULL, NULL, NULL, '2020-11-22 14:55:18', '2021-01-05 06:27:38');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `engineer`
+-- Struktur dari tabel `engineer`
 --
 
 CREATE TABLE `engineer` (
@@ -99,18 +102,19 @@ CREATE TABLE `engineer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `engineer`
+-- Dumping data untuk tabel `engineer`
 --
 
 INSERT INTO `engineer` (`en_id`, `ac_id`, `en_job_title`, `en_job_type`, `en_domicile`, `en_description`, `en_profile`, `en_created_at`, `en_updated_at`) VALUES
-(1, 1, 'Backend', 'full time', 'Bekasi', 'Very Good', 'IMG-1606047862698.jpg', '2020-11-22 11:50:51', '2020-11-22 12:24:22'),
-(2, 2, 'Frontend', 'freelance', 'Mojokerto', 'Very Good', 'IMG-1606047904134.jpg', '2020-11-22 11:59:32', '2020-11-22 12:25:04'),
-(3, 3, 'Fullstack Android', 'full time', 'Manado', 'Expert', 'IMG-1606048071665.jpg', '2020-11-22 12:00:06', '2020-11-22 12:27:51');
+(1, 1, 'Android Developer', 'full time', 'Pondok Gede', 'Very Good', 'IMG-1606046108860.jpg', '2020-11-22 11:50:51', '2021-01-15 09:07:04'),
+(2, 2, 'Web Developer', 'freelance', 'Mojokerto', 'Very Good', 'IMG-1606047904134.jpg', '2020-11-22 11:59:32', '2021-01-05 06:28:44'),
+(3, 3, 'Fullstack Android', 'full time', 'Manado', 'Expert', 'IMG-1606048071665.jpg', '2020-11-22 12:00:06', '2020-11-22 12:27:51'),
+(4, 7, 'Devops', 'freelance', 'Duta Indah', 'Good', '', '2020-11-22 14:51:19', '2021-01-05 06:29:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `experience`
+-- Struktur dari tabel `experience`
 --
 
 CREATE TABLE `experience` (
@@ -124,7 +128,7 @@ CREATE TABLE `experience` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `experience`
+-- Dumping data untuk tabel `experience`
 --
 
 INSERT INTO `experience` (`ex_id`, `en_id`, `ex_position`, `ex_company`, `ex_start`, `ex_end`, `ex_description`) VALUES
@@ -137,7 +141,7 @@ INSERT INTO `experience` (`ex_id`, `en_id`, `ex_position`, `ex_company`, `ex_sta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hire`
+-- Struktur dari tabel `hire`
 --
 
 CREATE TABLE `hire` (
@@ -152,21 +156,20 @@ CREATE TABLE `hire` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `hire`
+-- Dumping data untuk tabel `hire`
 --
 
 INSERT INTO `hire` (`hr_id`, `en_id`, `pj_id`, `hr_price`, `hr_message`, `hr_status`, `hr_date_confirm`, `hr_created_at`) VALUES
-(1, 1, 1, 10000000, 'Kami tunggu persetujuannya', 'approve', '2020-11-22 20:05:39', '2020-11-22 13:05:19'),
-(2, 3, 2, 10000000, 'Kami tunggu persetujuannya', 'wait', '2020-11-22 20:06:18', '2020-11-22 13:05:29'),
-(4, 2, 2, 10000000, 'Kami tunggu persetujuannya', 'wait', NULL, '2020-11-22 13:06:01');
+(1, 1, 1, 1000, 'Project 1', 'approve', '2021-01-12 21:33:27', '2020-11-22 13:05:19'),
+(2, 1, 2, 2000, 'Project 2', 'reject', '2021-01-12 21:37:12', '2020-11-22 13:05:29');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `portfolio`
+-- Struktur dari tabel `portofolio`
 --
 
-CREATE TABLE `portfolio` (
+CREATE TABLE `portofolio` (
   `pr_id` int(11) UNSIGNED NOT NULL,
   `en_id` int(11) UNSIGNED NOT NULL,
   `pr_app` varchar(50) NOT NULL,
@@ -179,17 +182,17 @@ CREATE TABLE `portfolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `portfolio`
+-- Dumping data untuk tabel `portofolio`
 --
 
-INSERT INTO `portfolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
+INSERT INTO `portofolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
 (1, 1, 'EAM WME', 'Web pendataan barang', '-', '-', '-', '', 'IMG-1606049701878.png'),
 (2, 3, 'Kompas News', 'Aplikasi berita', '-', '-', '-', '', 'IMG-1606049886521.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project`
+-- Struktur dari tabel `project`
 --
 
 CREATE TABLE `project` (
@@ -204,17 +207,19 @@ CREATE TABLE `project` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `project`
+-- Dumping data untuk tabel `project`
 --
 
 INSERT INTO `project` (`pj_id`, `cn_id`, `pj_project_name`, `pj_description`, `pj_deadline`, `pj_image`, `pj_created_at`, `pj_updated_at`) VALUES
-(1, 3, 'Aplikasi Android E-Gaji Berkala', 'Membuat Aplikasi Android Untuk Pengelolaan Gaji Berkala', '2021-03-01', 'IMG-1606050058662.jpg', '2020-11-22 13:00:58', '2020-11-22 13:00:58'),
-(2, 1, 'Web Pendataan Barang', 'Membuat Website Pendataan dan Pemeliharaan Asset', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2020-11-22 13:02:41');
+(1, 1, 'Aplikasi Android E-Gaji Berkala', 'Membuat Aplikasi Android Untuk Pengelolaan Gaji Berkala', '2021-03-01', 'IMG-1606050058662.jpg', '2020-11-22 13:00:58', '2021-01-05 02:39:03'),
+(2, 1, 'Web Pendataan Barang', 'Membuat Website Pendataan dan Pemeliharaan Asset', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2020-11-22 13:02:41'),
+(3, 2, 'DevOps', 'Desc Devops', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2021-01-15 13:38:03'),
+(4, 4, 'Kotlin', 'Desc Kotlin', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2021-01-15 13:37:58');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skill`
+-- Struktur dari tabel `skill`
 --
 
 CREATE TABLE `skill` (
@@ -224,7 +229,7 @@ CREATE TABLE `skill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `skill`
+-- Dumping data untuk tabel `skill`
 --
 
 INSERT INTO `skill` (`sk_id`, `en_id`, `sk_skill_name`) VALUES
@@ -235,41 +240,43 @@ INSERT INTO `skill` (`sk_id`, `en_id`, `sk_skill_name`) VALUES
 (6, 1, 'Javascript'),
 (7, 3, 'Golang'),
 (8, 3, 'Kotlin'),
-(9, 2, 'Kotlin');
+(9, 2, 'Kotlin'),
+(10, 4, 'Kotlin'),
+(13, 1, 'Devops');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `account`
+-- Indeks untuk tabel `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`ac_id`);
 
 --
--- Indexes for table `company`
+-- Indeks untuk tabel `company`
 --
 ALTER TABLE `company`
   ADD PRIMARY KEY (`cn_id`),
   ADD KEY `ac_id` (`ac_id`);
 
 --
--- Indexes for table `engineer`
+-- Indeks untuk tabel `engineer`
 --
 ALTER TABLE `engineer`
   ADD PRIMARY KEY (`en_id`),
   ADD KEY `ac_id` (`ac_id`);
 
 --
--- Indexes for table `experience`
+-- Indeks untuk tabel `experience`
 --
 ALTER TABLE `experience`
   ADD PRIMARY KEY (`ex_id`),
   ADD KEY `en_id` (`en_id`) USING BTREE;
 
 --
--- Indexes for table `hire`
+-- Indeks untuk tabel `hire`
 --
 ALTER TABLE `hire`
   ADD PRIMARY KEY (`hr_id`),
@@ -277,121 +284,121 @@ ALTER TABLE `hire`
   ADD KEY `pj_id` (`pj_id`);
 
 --
--- Indexes for table `portfolio`
+-- Indeks untuk tabel `portofolio`
 --
-ALTER TABLE `portfolio`
+ALTER TABLE `portofolio`
   ADD PRIMARY KEY (`pr_id`),
   ADD KEY `en_id` (`en_id`) USING BTREE;
 
 --
--- Indexes for table `project`
+-- Indeks untuk tabel `project`
 --
 ALTER TABLE `project`
   ADD PRIMARY KEY (`pj_id`),
   ADD KEY `cn_id` (`cn_id`);
 
 --
--- Indexes for table `skill`
+-- Indeks untuk tabel `skill`
 --
 ALTER TABLE `skill`
   ADD PRIMARY KEY (`sk_id`),
   ADD KEY `en_id` (`en_id`) USING BTREE;
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `account`
+-- AUTO_INCREMENT untuk tabel `account`
 --
 ALTER TABLE `account`
-  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `company`
+-- AUTO_INCREMENT untuk tabel `company`
 --
 ALTER TABLE `company`
-  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `engineer`
+-- AUTO_INCREMENT untuk tabel `engineer`
 --
 ALTER TABLE `engineer`
-  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `experience`
+-- AUTO_INCREMENT untuk tabel `experience`
 --
 ALTER TABLE `experience`
   MODIFY `ex_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `hire`
+-- AUTO_INCREMENT untuk tabel `hire`
 --
 ALTER TABLE `hire`
-  MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `portfolio`
+-- AUTO_INCREMENT untuk tabel `portofolio`
 --
-ALTER TABLE `portfolio`
+ALTER TABLE `portofolio`
   MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `project`
+-- AUTO_INCREMENT untuk tabel `project`
 --
 ALTER TABLE `project`
-  MODIFY `pj_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pj_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `skill`
+-- AUTO_INCREMENT untuk tabel `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `sk_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `sk_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `company`
+-- Ketidakleluasaan untuk tabel `company`
 --
 ALTER TABLE `company`
   ADD CONSTRAINT `company_ac_id_fk` FOREIGN KEY (`ac_id`) REFERENCES `account` (`ac_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `engineer`
+-- Ketidakleluasaan untuk tabel `engineer`
 --
 ALTER TABLE `engineer`
   ADD CONSTRAINT `engineer_ac_id_fk` FOREIGN KEY (`ac_id`) REFERENCES `account` (`ac_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `experience`
+-- Ketidakleluasaan untuk tabel `experience`
 --
 ALTER TABLE `experience`
   ADD CONSTRAINT `experience_en_id_fk` FOREIGN KEY (`en_id`) REFERENCES `engineer` (`en_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `hire`
+-- Ketidakleluasaan untuk tabel `hire`
 --
 ALTER TABLE `hire`
   ADD CONSTRAINT `hire_en_id_fk` FOREIGN KEY (`en_id`) REFERENCES `engineer` (`en_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `hire_pj_id_fk` FOREIGN KEY (`pj_id`) REFERENCES `project` (`pj_id`);
 
 --
--- Constraints for table `portfolio`
+-- Ketidakleluasaan untuk tabel `portofolio`
 --
-ALTER TABLE `portfolio`
+ALTER TABLE `portofolio`
   ADD CONSTRAINT `portfolio_en_id_fk` FOREIGN KEY (`en_id`) REFERENCES `engineer` (`en_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `project`
+-- Ketidakleluasaan untuk tabel `project`
 --
 ALTER TABLE `project`
   ADD CONSTRAINT `project_cn_id_fk` FOREIGN KEY (`cn_id`) REFERENCES `company` (`cn_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `skill`
+-- Ketidakleluasaan untuk tabel `skill`
 --
 ALTER TABLE `skill`
   ADD CONSTRAINT `skill_en_id_fk` FOREIGN KEY (`en_id`) REFERENCES `engineer` (`en_id`) ON DELETE CASCADE ON UPDATE CASCADE;

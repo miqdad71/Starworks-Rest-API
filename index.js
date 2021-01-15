@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use('/image', express.static('./uploads'))
+app.use('/images', express.static('./uploads'))
 
 // routes access
 // app.use('/', indexRouter)
