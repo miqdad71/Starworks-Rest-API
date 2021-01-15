@@ -1,9 +1,7 @@
 const {
-  getAllData,
   getAllEngineer,
   getSearchEngineer,
   getEngineerById,
-  getEngineerByIdAc,
   updateEngineer,
   getFilterEngineer
 } = require('../models/engineer')
@@ -12,7 +10,6 @@ const isEmpty = require('lodash.isempty')
 
 const {
   statusGet,
-  statusGetPaginate,
   statusUpdate,
   statusUpdateFail,
   statusServerError,
@@ -51,24 +48,20 @@ module.exports = {
       }
 
       if (result.length) {
-        const totalData = await getAllData()
-        const totalPage = Math.ceil(totalData.length / limit)
-
-        statusGetPaginate(res, result, totalPage)
+        statusGet(res, result)
       } else {
         statusNotFound(res)
       }
     } catch (error) {
-      console.log(error)
       statusServerError(res)
     }
   },
 
   getEngineerById: async (req, res, _next) => {
-    const { acId } = req.params
+    const { enId } = req.params
 
     try {
-      const result = await getEngineerById(acId)
+      const result = await getEngineerById(enId)
 
       if (result.length) {
         statusGet(res, result)
@@ -76,7 +69,6 @@ module.exports = {
         statusNotFound(res)
       }
     } catch (error) {
-      console.log(`${error}`)
       statusServerError(res)
     }
   },
@@ -126,7 +118,7 @@ module.exports = {
     const { enId } = req.params
 
     try {
-      const findData = await getEngineerByIdAc(enId)
+      const findData = await getEngineerById(enId)
 
       if (findData.length) {
         req.body.image = req.file === undefined ? findData[0].en_profile : req.file.filename

@@ -20,54 +20,6 @@ module.exports = {
     })
   },
 
-  getAllData: () => {
-    return new Promise((resolve, reject) => {
-      const query = `
-        SELECT en.en_id,
-               ac.ac_id,
-               ac.ac_name,
-               en.en_job_title,
-               en.en_job_type,
-               en.en_domicile,
-               en.en_profile
-          FROM engineer en
-          JOIN account ac
-            ON ac.ac_id = en.ac_id
-         WHERE en.en_job_title != ''
-           AND en.en_job_type != ''
-           AND en.en_domicile != ''
-      ORDER BY ac.ac_id DESC
-      `
-
-      dbConnect.query(query, async (error, results, _fields) => {
-        if (!error) {
-          const data = []
-
-          for (let i = 0; i < results.length; i++) {
-            const item = results[i]
-
-            const skill = await getAllSkillById(item.en_id)
-
-            data[i] = {
-              en_id: item.en_id,
-              ac_id: item.ac_id,
-              ac_name: item.ac_name,
-              en_job_title: item.en_job_title,
-              en_job_type: item.en_job_type,
-              en_domicile: item.en_domicile,
-              en_profile: item.en_profile,
-              en_skill: skill
-            }
-          }
-
-          resolve(data)
-        } else {
-          reject(error)
-        }
-      })
-    })
-  },
-
   getAllEngineer: (paginate) => {
     return new Promise((resolve, reject) => {
       const query = `
@@ -82,9 +34,7 @@ module.exports = {
           JOIN account ac
             ON ac.ac_id = en.ac_id
          WHERE en.en_job_title != ''
-           AND en.en_job_type != ''
-           AND en.en_domicile != ''
-      ORDER BY ac.ac_id DESC
+      ORDER BY ac.ac_id
          LIMIT ${paginate.limit}
         OFFSET ${paginate.offset}
       `
@@ -133,13 +83,9 @@ module.exports = {
             ON (ac.ac_id = en.ac_id)
          WHERE ac.ac_name
           LIKE '%${paginate.search}%'
-            OR en.en_job_title
+            OR sk.sk_skill_name
           LIKE '%${paginate.search}%'
-            OR en.en_job_type
-          LIKE '%${paginate.search}%'
-            OR en.en_domicile
-          LIKE '%${paginate.search}%'
-      ORDER BY ac.ac_id ASC
+      ORDER BY ac.ac_id
          LIMIT ${paginate.limit} 
         OFFSET ${paginate.offset}
       `
@@ -182,8 +128,7 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_profile,
-               en.en_domicile,
-               en.en_description
+               en.en_domicile
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
@@ -194,35 +139,6 @@ module.exports = {
         if (!error) {
           resolve(results)
         } else {
-          console.error(error)
-          reject(error)
-        }
-      })
-    })
-  },
-
-  getEngineerByIdAc: (enId) => {
-    return new Promise((resolve, reject) => {
-      const query = `
-        SELECT en.en_id,
-               ac.ac_id,
-               ac.ac_name,
-               en.en_job_title,
-               en.en_job_type,
-               en.en_profile,
-               en.en_domicile,
-               en.en_description
-          FROM engineer en
-          JOIN account ac
-            ON ac.ac_id = en.ac_id
-         WHERE en.?
-      `
-
-      dbConnect.query(query, { en_id: enId }, (error, results, _fields) => {
-        if (!error) {
-          resolve(results)
-        } else {
-          console.error(error)
           reject(error)
         }
       })
@@ -236,16 +152,19 @@ module.exports = {
       let where
 
       if (filter === 0) {
-        fill = 'ac.ac_name ASC'
+        fill = 'ac.ac_name'
         where = ''
       } else if (filter === 1) {
-        fill = 'en.en_domicile ASC'
+        fill = 'sk.sk_skill_name'
         where = ''
       } else if (filter === 2) {
-        fill = 'en.en_job_type ASC'
+        fill = 'en.en_domicile'
+        where = ''
+      } else if (filter === 3) {
+        fill = 'en.en_job_type'
         where = "WHERE en.en_job_type = 'freelance'"
       } else {
-        fill = 'en.en_job_type ASC'
+        fill = 'en.en_job_type'
         where = "WHERE en.en_job_type = 'full time'"
       }
 
@@ -262,9 +181,6 @@ module.exports = {
               ON ac.ac_id = en.ac_id
                  ${where}
              AND en.en_job_title != ''
-             AND en.en_job_type != ''
-             AND en.en_domicile != ''
-        GROUP BY en.en_id
         ORDER BY ${fill}
            LIMIT ${paginate.limit} 
           OFFSET ${paginate.offset}
