@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jan 2021 pada 15.38
+-- Waktu pembuatan: 16 Jan 2021 pada 04.26
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -186,8 +186,10 @@ CREATE TABLE `portofolio` (
 --
 
 INSERT INTO `portofolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
-(1, 1, 'EAM WME', 'Web pendataan barang', '-', '-', '-', '', 'IMG-1606049701878.png'),
-(2, 3, 'Kompas News', 'Aplikasi berita', '-', '-', '-', '', 'IMG-1606049886521.png');
+(1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606049701878.png'),
+(2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp1', 'aplikasi web', 'IMG-1606049886521.png'),
+(3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606049701878.png'),
+(4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606049701878.png');
 
 -- --------------------------------------------------------
 
@@ -342,7 +344,7 @@ ALTER TABLE `hire`
 -- AUTO_INCREMENT untuk tabel `portofolio`
 --
 ALTER TABLE `portofolio`
-  MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `project`
