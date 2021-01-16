@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jan 2021 pada 04.45
+-- Waktu pembuatan: 16 Jan 2021 pada 04.50
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -186,9 +186,9 @@ CREATE TABLE `portfolio` (
 --
 
 INSERT INTO `portfolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
-(1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606050161005.png'),
-(2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp1', 'aplikasi web', 'IMG-1606049886521.png'),
-(3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050058662.png'),
+(1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606050161005.jpg'),
+(2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp1', 'aplikasi web', 'IMG-1606049886521.jpg'),
+(3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050058662.jpg'),
 (4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050161005.jpg');
 
 -- --------------------------------------------------------
