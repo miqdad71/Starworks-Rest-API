@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jan 2021 pada 04.26
+-- Waktu pembuatan: 16 Jan 2021 pada 04.45
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -78,7 +78,7 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`cn_id`, `ac_id`, `cn_company`, `cn_position`, `cn_field`, `cn_city`, `cn_description`, `cn_instagram`, `cn_linkedin`, `cn_profile`, `cn_created_at`, `cn_updated_at`) VALUES
-(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606048186483.jpg', '2020-11-22 12:08:20', '2021-01-05 06:27:27'),
+(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606049701878.jpg', '2020-11-22 12:08:20', '2021-01-16 03:42:07'),
 (2, 5, 'Go-Hire', 'CEO', 'Tambun', 'Bekasi', 'Regensi II', 'gohire', 'go_hire', 'IMG-1606048373263.jpg', '2020-11-22 12:09:56', '2021-01-15 14:36:03'),
 (3, 6, 'E-Hire', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'e_hire', 'ehire', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2021-01-15 14:36:18'),
 (4, 8, 'E-recruitment', 'HRD', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', NULL, '2020-11-22 14:55:18', '2021-01-15 14:33:59');
@@ -166,10 +166,10 @@ INSERT INTO `hire` (`hr_id`, `en_id`, `pj_id`, `hr_price`, `hr_message`, `hr_sta
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `portofolio`
+-- Struktur dari tabel `portfolio`
 --
 
-CREATE TABLE `portofolio` (
+CREATE TABLE `portfolio` (
   `pr_id` int(11) UNSIGNED NOT NULL,
   `en_id` int(11) UNSIGNED NOT NULL,
   `pr_app` varchar(50) NOT NULL,
@@ -182,14 +182,14 @@ CREATE TABLE `portofolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `portofolio`
+-- Dumping data untuk tabel `portfolio`
 --
 
-INSERT INTO `portofolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
-(1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606049701878.png'),
+INSERT INTO `portfolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
+(1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606050161005.png'),
 (2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp1', 'aplikasi web', 'IMG-1606049886521.png'),
-(3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606049701878.png'),
-(4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606049701878.png');
+(3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050058662.png'),
+(4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050161005.jpg');
 
 -- --------------------------------------------------------
 
@@ -286,9 +286,9 @@ ALTER TABLE `hire`
   ADD KEY `pj_id` (`pj_id`);
 
 --
--- Indeks untuk tabel `portofolio`
+-- Indeks untuk tabel `portfolio`
 --
-ALTER TABLE `portofolio`
+ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`pr_id`),
   ADD KEY `en_id` (`en_id`) USING BTREE;
 
@@ -341,9 +341,9 @@ ALTER TABLE `hire`
   MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `portofolio`
+-- AUTO_INCREMENT untuk tabel `portfolio`
 --
-ALTER TABLE `portofolio`
+ALTER TABLE `portfolio`
   MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -388,9 +388,9 @@ ALTER TABLE `hire`
   ADD CONSTRAINT `hire_pj_id_fk` FOREIGN KEY (`pj_id`) REFERENCES `project` (`pj_id`);
 
 --
--- Ketidakleluasaan untuk tabel `portofolio`
+-- Ketidakleluasaan untuk tabel `portfolio`
 --
-ALTER TABLE `portofolio`
+ALTER TABLE `portfolio`
   ADD CONSTRAINT `portfolio_en_id_fk` FOREIGN KEY (`en_id`) REFERENCES `engineer` (`en_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
