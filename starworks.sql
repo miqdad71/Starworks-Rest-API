@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jan 2021 pada 04.50
+-- Waktu pembuatan: 17 Jan 2021 pada 17.39
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -109,7 +109,7 @@ INSERT INTO `engineer` (`en_id`, `ac_id`, `en_job_title`, `en_job_type`, `en_dom
 (1, 1, 'Android Developer', 'full time', 'Pondok Gede', 'Very Good', 'IMG-1606046108860.jpg', '2020-11-22 11:50:51', '2021-01-15 09:07:04'),
 (2, 2, 'Web Developer', 'freelance', 'Mojokerto', 'Very Good', 'IMG-1606047904134.jpg', '2020-11-22 11:59:32', '2021-01-05 06:28:44'),
 (3, 3, 'Fullstack Android', 'full time', 'Manado', 'Expert', 'IMG-1606048071665.jpg', '2020-11-22 12:00:06', '2020-11-22 12:27:51'),
-(4, 7, 'Devops', 'freelance', 'Duta Indah', 'Good', '', '2020-11-22 14:51:19', '2021-01-05 06:29:30');
+(4, 7, 'Devops', 'freelance', 'Duta Indah', 'Good', 'IMG-1606048373263.jpg', '2020-11-22 14:51:19', '2021-01-17 16:36:05');
 
 -- --------------------------------------------------------
 
@@ -187,9 +187,10 @@ CREATE TABLE `portfolio` (
 
 INSERT INTO `portfolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
 (1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606050161005.jpg'),
-(2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp1', 'aplikasi web', 'IMG-1606049886521.jpg'),
+(2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp3', 'aplikasi mobile', 'IMG-1606049886521.jpg'),
 (3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050058662.jpg'),
-(4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050161005.jpg');
+(4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050161005.jpg'),
+(5, 2, 'Mangaku App', 'Aplikasi baca komik', 'pub2', 'repo2', 'wp2', 'aplikasi mobile', 'IMG-1610617791239.jpg');
 
 -- --------------------------------------------------------
 
@@ -344,7 +345,7 @@ ALTER TABLE `hire`
 -- AUTO_INCREMENT untuk tabel `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `project`
