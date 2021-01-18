@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jan 2021 pada 03.35
+-- Waktu pembuatan: 18 Jan 2021 pada 05.25
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -78,10 +78,10 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`cn_id`, `ac_id`, `cn_company`, `cn_position`, `cn_field`, `cn_city`, `cn_description`, `cn_instagram`, `cn_linkedin`, `cn_profile`, `cn_created_at`, `cn_updated_at`) VALUES
-(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606049701878.jpg', '2020-11-22 12:08:20', '2021-01-16 03:42:07'),
-(2, 5, 'Go-Hire', 'CEO', 'Tambun', 'Bekasi', 'Regensi II', 'gohire', 'go_hire', 'IMG-1606048373263.jpg', '2020-11-22 12:09:56', '2021-01-15 14:36:03'),
-(3, 6, 'E-Hire', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'e_hire', 'ehire', 'IMG-1606048532674.jpg', '2020-11-22 12:11:06', '2021-01-15 14:36:18'),
-(4, 8, 'E-recruitment', 'HRD', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', NULL, '2020-11-22 14:55:18', '2021-01-15 14:33:59');
+(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606047551201.jpg', '2020-11-22 12:08:20', '2021-01-18 04:25:01'),
+(2, 5, 'Go-Hire', 'CEO', 'Tambun', 'Bekasi', 'Regensi II', 'gohire', 'go_hire', 'IMG-1606048186483.jpg', '2020-11-22 12:09:56', '2021-01-18 04:25:15'),
+(3, 6, 'E-Hire', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'e_hire', 'ehire', 'IMG-1606048373263.jpg', '2020-11-22 12:11:06', '2021-01-18 04:25:24'),
+(4, 8, 'E-recruitment', 'HRD', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', 'IMG-1610617791239.jpeg', '2020-11-22 14:55:18', '2021-01-18 04:25:37');
 
 -- --------------------------------------------------------
 
