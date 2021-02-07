@@ -28,7 +28,8 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_domicile,
-               en.en_profile
+               en.en_profile,
+               en.en_description
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
@@ -54,6 +55,7 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
+              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -125,7 +127,8 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_domicile,
-               en.en_profile
+               en.en_profile,
+               en.en_description
           FROM engineer en
           JOIN account ac 
             ON (ac.ac_id = en.ac_id)
@@ -154,6 +157,7 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
+              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -176,7 +180,8 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_profile,
-               en.en_domicile
+               en.en_domicile,
+               en.en_description
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
@@ -202,7 +207,8 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_profile,
-               en.en_domicile
+               en.en_domicile,
+               en.en_description
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
@@ -250,7 +256,8 @@ module.exports = {
                  en.en_job_title,
                  en.en_job_type,
                  en.en_domicile,
-                 en.en_profile
+                 en.en_profile,
+                 en.en_description
             FROM engineer en
             JOIN account ac
               ON ac.ac_id = en.ac_id
@@ -277,6 +284,7 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
+              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
