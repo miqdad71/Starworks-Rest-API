@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Feb 2021 pada 05.13
+-- Waktu pembuatan: 07 Feb 2021 pada 09.27
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -161,7 +161,8 @@ CREATE TABLE `hire` (
 
 INSERT INTO `hire` (`hr_id`, `en_id`, `pj_id`, `hr_price`, `hr_message`, `hr_status`, `hr_date_confirm`, `hr_created_at`) VALUES
 (1, 1, 1, 10000000, 'Project 1', 'approve', '2021-01-12 21:33:27', '2020-11-22 13:05:19'),
-(2, 1, 2, 20000000, 'Project 2', 'reject', '2021-01-12 21:37:12', '2020-11-22 13:05:29');
+(2, 1, 2, 20000000, 'Project 2', 'reject', '2021-01-12 21:37:12', '2020-11-22 13:05:29'),
+(3, 1, 3, 30000000, 'Project 3', 'wait', '2021-01-12 21:37:12', '2020-11-22 13:05:29');
 
 -- --------------------------------------------------------
 
@@ -216,8 +217,7 @@ CREATE TABLE `project` (
 INSERT INTO `project` (`pj_id`, `cn_id`, `pj_project_name`, `pj_description`, `pj_deadline`, `pj_image`, `pj_created_at`, `pj_updated_at`) VALUES
 (1, 1, 'Aplikasi Android E-Gaji Berkala', 'Membuat Aplikasi Android Untuk Pengelolaan Gaji Berkala', '2021-03-01', 'IMG-1606050058662.jpg', '2020-11-22 13:00:58', '2021-01-05 02:39:03'),
 (2, 1, 'Web Pendataan Barang', 'Membuat Website Pendataan dan Pemeliharaan Asset', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2020-11-22 13:02:41'),
-(3, 2, 'DevOps', 'Desc Devops', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2021-01-15 13:38:03'),
-(4, 4, 'Kotlin', 'Desc Kotlin', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2021-01-15 13:37:58');
+(3, 1, 'Co-Detection', 'Aplikasi Pendeteksi Virus Covid-19', '2020-11-30', 'IMG-1606050161005.jpg', '2020-11-22 13:02:41', '2021-02-07 08:25:55');
 
 -- --------------------------------------------------------
 
@@ -339,7 +339,7 @@ ALTER TABLE `experience`
 -- AUTO_INCREMENT untuk tabel `hire`
 --
 ALTER TABLE `hire`
-  MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `hr_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `portfolio`
@@ -351,7 +351,7 @@ ALTER TABLE `portfolio`
 -- AUTO_INCREMENT untuk tabel `project`
 --
 ALTER TABLE `project`
-  MODIFY `pj_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pj_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `skill`
