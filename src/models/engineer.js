@@ -104,6 +104,7 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
+              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -156,6 +157,7 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
+              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -282,6 +284,7 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
+              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
