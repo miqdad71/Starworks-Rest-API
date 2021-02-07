@@ -15,7 +15,14 @@ module.exports = {
       data: result
     })
   },
-
+  statusGetPaginate: (res, result, length) => {
+    res.status(200).send({
+      success: true,
+      message: 'Success to get data',
+      totalPages: length,
+      data: result
+    })
+  },
   statusLogin: (res, result) => {
     res.status(200).send({
       success: true,

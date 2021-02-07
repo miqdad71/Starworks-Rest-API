@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jan 2021 pada 05.25
+-- Waktu pembuatan: 07 Feb 2021 pada 05.13
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -160,8 +160,8 @@ CREATE TABLE `hire` (
 --
 
 INSERT INTO `hire` (`hr_id`, `en_id`, `pj_id`, `hr_price`, `hr_message`, `hr_status`, `hr_date_confirm`, `hr_created_at`) VALUES
-(1, 1, 1, 1000, 'Project 1', 'approve', '2021-01-12 21:33:27', '2020-11-22 13:05:19'),
-(2, 1, 2, 2000, 'Project 2', 'reject', '2021-01-12 21:37:12', '2020-11-22 13:05:29');
+(1, 1, 1, 10000000, 'Project 1', 'approve', '2021-01-12 21:33:27', '2020-11-22 13:05:19'),
+(2, 1, 2, 20000000, 'Project 2', 'reject', '2021-01-12 21:37:12', '2020-11-22 13:05:29');
 
 -- --------------------------------------------------------
 
@@ -315,19 +315,19 @@ ALTER TABLE `skill`
 -- AUTO_INCREMENT untuk tabel `account`
 --
 ALTER TABLE `account`
-  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `company`
 --
 ALTER TABLE `company`
-  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `engineer`
 --
 ALTER TABLE `engineer`
-  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `experience`
@@ -357,7 +357,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT untuk tabel `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `sk_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `sk_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
