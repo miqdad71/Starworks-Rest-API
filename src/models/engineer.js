@@ -192,6 +192,7 @@ module.exports = {
         if (!error) {
           resolve(results)
         } else {
+          console.error(error)
           reject(error)
         }
       })
