@@ -123,7 +123,6 @@ module.exports = {
                 ac_level: findData[0].ac_level,
                 ac_email: findData[0].ac_email,
                 ac_phone: findData[0].ac_phone
-
               }
             } else {
               payload = {
@@ -133,7 +132,6 @@ module.exports = {
                 ac_level: findData[0].ac_level,
                 ac_email: findData[0].ac_email,
                 ac_phone: findData[0].ac_phone
-
               }
             }
 

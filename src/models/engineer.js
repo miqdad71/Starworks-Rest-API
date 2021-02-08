@@ -19,6 +19,7 @@ module.exports = {
       })
     })
   },
+
   getAllData: () => {
     return new Promise((resolve, reject) => {
       const query = `
@@ -28,8 +29,7 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_domicile,
-               en.en_profile,
-               en.en_description
+               en.en_profile
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
@@ -55,7 +55,6 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
-              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -68,6 +67,7 @@ module.exports = {
       })
     })
   },
+
   getAllEngineer: (paginate) => {
     return new Promise((resolve, reject) => {
       const query = `
@@ -77,13 +77,14 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_domicile,
-               en.en_profile,
-               en.en_description
+               en.en_profile
           FROM engineer en
           JOIN account ac
             ON ac.ac_id = en.ac_id
          WHERE en.en_job_title != ''
-      ORDER BY ac.ac_id
+           AND en.en_job_type != ''
+           AND en.en_domicile != ''
+      ORDER BY en.en_id DESC
          LIMIT ${paginate.limit}
         OFFSET ${paginate.offset}
       `
@@ -104,7 +105,6 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
-              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -127,16 +127,19 @@ module.exports = {
                en.en_job_title,
                en.en_job_type,
                en.en_domicile,
-               en.en_profile,
-               en.en_description
+               en.en_profile
           FROM engineer en
           JOIN account ac 
             ON (ac.ac_id = en.ac_id)
          WHERE ac.ac_name
           LIKE '%${paginate.search}%'
-            OR sk.sk_skill_name
+            OR en.en_job_title
           LIKE '%${paginate.search}%'
-      ORDER BY ac.ac_id
+            OR en.en_job_type
+          LIKE '%${paginate.search}%'
+            OR en.en_domicile
+          LIKE '%${paginate.search}%'
+      ORDER BY ac.ac_id ASC
          LIMIT ${paginate.limit} 
         OFFSET ${paginate.offset}
       `
@@ -157,7 +160,6 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
-              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
@@ -234,19 +236,16 @@ module.exports = {
       let where
 
       if (filter === 0) {
-        fill = 'ac.ac_name'
+        fill = 'ac.ac_name ASC'
         where = ''
       } else if (filter === 1) {
-        fill = 'sk.sk_skill_name'
+        fill = 'en.en_domicile ASC'
         where = ''
       } else if (filter === 2) {
-        fill = 'en.en_domicile'
-        where = ''
-      } else if (filter === 3) {
-        fill = 'en.en_job_type'
+        fill = 'en.en_job_type ASC'
         where = "WHERE en.en_job_type = 'freelance'"
       } else {
-        fill = 'en.en_job_type'
+        fill = 'en.en_job_type ASC'
         where = "WHERE en.en_job_type = 'full time'"
       }
 
@@ -257,13 +256,15 @@ module.exports = {
                  en.en_job_title,
                  en.en_job_type,
                  en.en_domicile,
-                 en.en_profile,
-                 en.en_description
+                 en.en_profile
             FROM engineer en
             JOIN account ac
               ON ac.ac_id = en.ac_id
                  ${where}
              AND en.en_job_title != ''
+             AND en.en_job_type != ''
+             AND en.en_domicile != ''
+        GROUP BY en.en_id
         ORDER BY ${fill}
            LIMIT ${paginate.limit} 
           OFFSET ${paginate.offset}
@@ -285,7 +286,6 @@ module.exports = {
               en_job_title: item.en_job_title,
               en_job_type: item.en_job_type,
               en_domicile: item.en_domicile,
-              en_description: item.en_description,
               en_profile: item.en_profile,
               en_skill: skill
             }
