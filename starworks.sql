@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Feb 2021 pada 09.27
+-- Waktu pembuatan: 08 Feb 2021 pada 14.37
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -43,14 +43,13 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`ac_id`, `ac_name`, `ac_email`, `ac_phone`, `ac_password`, `ac_level`, `ac_created_at`, `ac_updated_at`) VALUES
-(1, 'Miqdad', 'miqdad.ihbs71777@gmail.com', '081298892112', '$2b$10$V.2q1oMG0qvUbv7bUulG5OF9GOf2hapPIlgx58mDSMgzy5bZKmMu6', 0, '2020-11-22 11:50:51', '2020-11-22 11:50:51'),
-(2, 'Royid Rosadi', 'rosyidrosadi@gmail.com', '081298892120', '$2b$10$6BwEmPGRyREI4tpnwoJVJux2m2RULuzPtbXlF7ijt9OpAMZ7vtOl6', 0, '2020-11-22 11:59:32', '2021-01-05 03:59:21'),
-(3, 'Indra David Pesik', 'ndradavid@gmail.com', '081298892130', '$2b$10$SJlRcSZ03NvFrqvN0N64k.dOSLePMtPZzkIBQUNnrvNqCshKfL/MW', 0, '2020-11-22 12:00:06', '2020-11-22 12:00:06'),
-(4, 'Ali Rohmansyah', 'ra@gmail.com', '082987651234', '$2b$10$ao/M2P196hr2Hl4JI6P3ROimejs9O0EEfq8jbra9O3JYQrEvmjeLi', 1, '2020-11-22 12:08:20', '2021-01-10 08:30:47'),
-(5, 'Luqman', 'luqman@gmail.com', '082987651121', '$2b$10$TF7PArSAiwWzxQbuvonOD.TeJiJsaG5QlRNRgl5T.g1UpBBeiIWZK', 1, '2020-11-22 12:09:56', '2021-01-15 14:34:34'),
-(6, 'Ahmad Farhan', 'farhan@gmail.com', '082987651222', '$2b$10$YakRc1kLNElFpU6AaD1YJuAOd2kV0gZKV2YvxTdSCHTx.7QHKamtm', 1, '2020-11-22 12:11:06', '2020-11-22 12:11:06'),
-(7, 'Zaki Maulana', 'zakimaulana08@gmail.com', '0812988921234', '$2b$10$ki9nsvCZT20yUkc/sBAX9u37mB0uAf.bXodu1/aq.S99aufLLShCm', 0, '2020-11-22 14:51:19', '2021-01-05 06:25:32'),
-(8, 'Engelbertus Hendro', 'henddro@gmail.com', '082987651222', '$2b$10$fbX6Cq/LCqvFvSxA7hPl9ele1B9bOPh2g.WGg27kVkKki/ILF/wsC', 1, '2020-11-22 14:55:18', '2020-11-22 14:55:18');
+(1, 'Miqdad', 'miqdad.ihbs71777@gmail.com', '081298892112', '$2b$10$ylj6PQIoKkXUgiKbu6DOi.Ag5Fl7dXVmoff3QHf1uqIw7tgARN3yi', 0, '2020-11-22 11:50:51', '2021-02-08 12:53:31'),
+(2, 'Royid Rosadi', 'rosyidrosadi@gmail.com', '081298892120', '$2b$10$esw8yVtJOvGl9JrY9BXaV.4ZMdBtO6.Sepxj0cJPmD2Sk0.AQVJYa', 0, '2020-11-22 11:59:32', '2021-02-08 13:36:51'),
+(3, 'Indra David Pesik', 'ndradavid@gmail.com', '081298892130', '$2b$10$IK4QNy04O4i64vt3cLTjdOrIhTmQR9EasVgSEqM3p2kbKVqAZ1REW', 0, '2020-11-22 12:00:06', '2021-02-08 13:36:54'),
+(4, 'Ali Rohmansyah', 'ra@gmail.com', '082987651234', '$2b$10$c0PS60ng8Pqm/pY4g0zOCu4NY52PZ2vH.kJazjSp5D8oRiXdsOCF6', 1, '2020-11-22 12:08:20', '2021-02-08 13:36:55'),
+(5, 'Zaki Maulana', 'zakimaulana08@gmail.com', '0812988921234', '$2b$10$bhd77k3IGsvmwk/PGkngoeNUzz9EkhOHw1cUAuPlKR4svX0DnOp2S', 0, '2020-11-22 14:51:19', '2021-02-08 13:36:57'),
+(6, 'Ikrima Wulan', 'ikrima@gmail.com', '0812988921234', '$2b$10$.yxprpCNCphBMY79HZMTFueAehhAu10lZldxsR3/jL7GFv7gTiX.S', 0, '2020-11-22 14:51:19', '2021-02-08 13:36:58'),
+(7, 'Ajizul Hakim', 'ajizul@gmail.com', '0812988921234', '$2b$10$M6zYdaj4ns5SJR2EMfgRw.cAha8sCfUa3/BozUohtElraU/QB79Cq', 0, '2020-11-22 14:51:19', '2021-02-08 13:37:01');
 
 -- --------------------------------------------------------
 
@@ -78,10 +77,7 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`cn_id`, `ac_id`, `cn_company`, `cn_position`, `cn_field`, `cn_city`, `cn_description`, `cn_instagram`, `cn_linkedin`, `cn_profile`, `cn_created_at`, `cn_updated_at`) VALUES
-(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606047551201.jpg', '2020-11-22 12:08:20', '2021-01-18 04:25:01'),
-(2, 5, 'Go-Hire', 'CEO', 'Tambun', 'Bekasi', 'Regensi II', 'gohire', 'go_hire', 'IMG-1606048186483.jpg', '2020-11-22 12:09:56', '2021-01-18 04:25:15'),
-(3, 6, 'E-Hire', 'CEO', 'Cikini', 'Jakarta', 'Pasar Senen', 'e_hire', 'ehire', 'IMG-1606048373263.jpg', '2020-11-22 12:11:06', '2021-01-18 04:25:24'),
-(4, 8, 'E-recruitment', 'HRD', 'Jembrana', 'Bali', 'Desa Banyu Biru', 'e_rec', 'erecruitment', 'IMG-1610617791239.jpeg', '2020-11-22 14:55:18', '2021-01-18 04:25:37');
+(1, 4, 'CV. FORKINDO', 'Worker', 'Pondok Gede', 'Bekasi', 'Komplek kologad no.17', 'cv_forkindo', 'cvforkindos', 'IMG-1606047551201.jpg', '2020-11-22 12:08:20', '2021-01-18 04:25:01');
 
 -- --------------------------------------------------------
 
@@ -109,7 +105,9 @@ INSERT INTO `engineer` (`en_id`, `ac_id`, `en_job_title`, `en_job_type`, `en_dom
 (1, 1, 'Android Developer', 'full time', 'Pondok Gede', 'Very Good', 'IMG-1606046108860.jpg', '2020-11-22 11:50:51', '2021-01-15 09:07:04'),
 (2, 2, 'Web Developer', 'freelance', 'Mojokerto', 'Very Good', 'IMG-1606047904134.jpg', '2020-11-22 11:59:32', '2021-01-05 06:28:44'),
 (3, 3, 'Fullstack Android', 'full time', 'Manado', 'Expert', 'IMG-1606048071665.jpg', '2020-11-22 12:00:06', '2020-11-22 12:27:51'),
-(4, 7, 'Devops', 'freelance', 'Duta Indah', 'Good', 'IMG-1606048373263.jpg', '2020-11-22 14:51:19', '2021-01-17 16:36:05');
+(4, 5, 'Devops', 'freelance', 'Duta Indah', 'Good', 'IMG-1606048373263.jpg', '2020-11-22 14:51:19', '2021-01-17 16:36:05'),
+(5, 6, 'Fullstack Mobile Developer', 'freelance', 'Majalengka', 'Expert', 'IMG-1606048186483.jpg', '2021-02-08 12:34:54', '2021-02-08 12:36:09'),
+(6, 7, 'Fullstack Android Developer', 'full time', 'Jakarta', 'Very Good', 'IMG-1606048532674.jpg', '2021-02-08 12:34:54', '2021-02-08 12:36:34');
 
 -- --------------------------------------------------------
 
@@ -315,19 +313,19 @@ ALTER TABLE `skill`
 -- AUTO_INCREMENT untuk tabel `account`
 --
 ALTER TABLE `account`
-  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ac_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `company`
 --
 ALTER TABLE `company`
-  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cn_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `engineer`
 --
 ALTER TABLE `engineer`
-  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `en_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `experience`
