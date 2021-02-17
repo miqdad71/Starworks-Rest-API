@@ -186,10 +186,10 @@ CREATE TABLE `portfolio` (
 
 INSERT INTO `portfolio` (`pr_id`, `en_id`, `pr_app`, `pr_description`, `pr_link_pub`, `pr_link_repo`, `pr_work_place`, `pr_type`, `pr_image`) VALUES
 (1, 1, 'EAM WME', 'Web pendataan barang', 'pub1', 'repo1', 'wp1', 'aplikasi mobile', 'IMG-1606050161005.jpg'),
-(2, 3, 'Kompas News', 'Aplikasi berita', 'pub3', 'repo3', 'wp3', 'aplikasi mobile', 'IMG-1606049886521.jpg'),
-(3, 1, 'Web App', 'Web Application', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050058662.jpg'),
-(4, 1, 'Devops App', 'Devops 1', 'pub1', 'repo1', 'wp1', 'aplikasi web', 'IMG-1606050161005.jpg'),
-(5, 2, 'Mangaku App', 'Aplikasi baca komik', 'pub2', 'repo2', 'wp2', 'aplikasi mobile', 'IMG-1610617791239.jpg');
+(2, 3, 'Kompas News', 'Aplikasi berita', 'Publication Kompas', 'github.com//ndraa/kompasnews', 'Kompas', 'aplikasi mobile', 'IMG-1606049886521.jpg'),
+(3, 1, 'Co-Brantas', 'Web Application', 'Publication Arkademy', 'github.com/miqdad71/co-brantas', 'Arkademy', 'aplikasi web', 'IMG-1606050058662.jpg'),
+(4, 1, 'Devops App', 'Dev-Go', 'Publication Go', 'github.com/miqdad71/Go', 'Arkademy', 'aplikasi web', 'IMG-1606050161005.jpg'),
+(5, 2, 'Mangaku App', 'Aplikasi baca komik', 'Publication Mangaku', 'github.com/rizfa', 'MangaKu', 'aplikasi mobile', 'IMG-1612962862906.jpeg');
 
 -- --------------------------------------------------------
 
