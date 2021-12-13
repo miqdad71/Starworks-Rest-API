@@ -35,14 +35,21 @@ API StarworkS ini dibuat untuk menangani backend dari request client ke server..
 Open .env file on your favorite code editor, and copy paste this code below :
 
 ```
-DB_HOST= YOUR_DB_HOST
-DB_USER= YOUR_DB_USER
-DB_PASSWORD= YOUR_DB_PASSWORD
-DB_DATABASE= YOUR_DATABASE
+DB_HOST = YOUR_DB_HOST
+DB_USER = YOUR_DB_USER
+DB_PASSWORD = YOUR_DB_PASSWORD
+DB_DATABASE = YOUR_DATABASE
+PORT = YOUR_PORT
+JWT_KEY = YOUR_JWT_KEY
 
-PORT=YUR_PORT
 
-JWT_KEY =YOUR_JWT_KEY
+example:
+DB_HOST     = localhost
+DB_USER     = root
+DB_PASS     = 
+DB_DATABASE = starworks
+PORT        = 4000
+JWT_KEY     = ARKAANDROID
 ```
 
 # Link Postman : 
